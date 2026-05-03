@@ -1,0 +1,3795 @@
+{
+  "concepts": [
+    {
+      "concept": "other",
+      "question": "Any other relevant status?",
+      "fields": [
+        "holds_market_committee_license",
+        "is_aay_family",
+        "is_academically_weak",
+        "is_activity_manufacturing_or_specified",
+        "is_adolescent_girl",
+        "is_adult",
+        "is_advocate",
+        "is_affected_by_autism",
+        "is_affiliated_with_university",
+        "is_agricultural_laborer",
+        "is_agriculturist",
+        "is_amateur_player",
+        "is_anganwadi_worker",
+        "is_antyodaya_family",
+        "is_application_complete",
+        "is_appreciation_award_grantee",
+        "is_art_institute_student",
+        "is_artisan",
+        "is_asbestos_processor",
+        "is_asha_sahayogi",
+        "is_attendant_accompanying",
+        "is_award_recipient_previously",
+        "is_backward_class",
+        "is_bank_defaulter",
+        "is_bengali_speaking",
+        "is_bhajan_performer",
+        "is_blacklisted_fcra",
+        "is_blind",
+        "is_born_in_goa",
+        "is_boy",
+        "is_breach_of_law",
+        "is_brewery_or_distillery",
+        "is_bsc_final_year",
+        "is_building_previously_occupied",
+        "is_business_trading_activity",
+        "is_caretaker_of_disabled",
+        "is_carrying_prohibited_items",
+        "is_cattle_breeder",
+        "is_cement_industry",
+        "is_central_funded_institution",
+        "is_centrally_funded",
+        "is_charitable_company",
+        "is_chhattisgarh_native",
+        "is_claim_duplicate",
+        "is_classical_music_artist",
+        "is_closed_unit",
+        "is_cluster",
+        "is_coir_artisan",
+        "is_commercial_vehicle_driver",
+        "is_compelling_situation_resolved",
+        "is_conflict_with_law",
+        "is_continuous_education",
+        "is_contract_research_only",
+        "is_contractual_teacher",
+        "is_cooperative",
+        "is_corporate_entity",
+        "is_couple_differently_abled",
+        "is_cow_helper",
+        "is_creamy_layer",
+        "is_debarred_previously",
+        "is_defaulted_on_loan",
+        "is_defaulting_developer",
+        "is_democratically_governed",
+        "is_deserted_or_divorced",
+        "is_devadasi",
+        "is_differently_abled",
+        "is_digitally_illiterate",
+        "is_divyang",
+        "is_divyangjan",
+        "is_domicile_of_india",
+        "is_dual_benefit_availed",
+        "is_edp_training_completed",
+        "is_educated",
+        "is_educational_institution",
+        "is_elderly",
+        "is_endosulfan_victim",
+        "is_energy_meter_running",
+        "is_enlisted_state_portal",
+        "is_entrepreneur",
+        "is_eunuch",
+        "is_ex_convict",
+        "is_false_statement_made",
+        "is_father_deceased",
+        "is_female",
+        "is_ffpo_or_ffpc",
+        "is_fictional_work",
+        "is_film_producer",
+        "is_fish_vendor",
+        "is_fit_to_travel",
+        "is_fluent_in_english",
+        "is_folk_artist",
+        "is_for_profit_organization",
+        "is_foreign_national",
+        "is_forest_rights_holder",
+        "is_formed_by_restructuring",
+        "is_fpo",
+        "is_fresh_admission",
+        "is_fully_cured",
+        "is_gmp_compliant",
+        "is_good_borrower",
+        "is_green_energy_consumer",
+        "is_groom_differently_abled",
+        "is_group_firm_organization",
+        "is_habitual_beggar",
+        "is_handicraft_artisan",
+        "is_head_of_family",
+        "is_high_risk_pregnancy",
+        "is_homeless_and_separated",
+        "is_hostel_stipend_applicant",
+        "is_ias_officer",
+        "is_icssr_fund_defaulter",
+        "is_immunized",
+        "is_implementing_agency",
+        "is_included_in_secc",
+        "is_industrial_unit",
+        "is_industrialist",
+        "is_infrastructure_project",
+        "is_institutional_applicant",
+        "is_interested_in_entrepreneurship",
+        "is_invitational_tournament_disqualifier",
+        "is_invited_expert",
+        "is_iron_steel_smelting",
+        "is_jbnsts_scholar",
+        "is_jc_bose_fellow",
+        "is_joint_borrower",
+        "is_kerala_origin",
+        "is_kvpy_scholar",
+        "is_labour_intensive_unit",
+        "is_large_group",
+        "is_law_officer",
+        "is_leather_artisan",
+        "is_legally_divorced",
+        "is_leprosy_affected",
+        "is_less_educated",
+        "is_literate",
+        "is_litterateur",
+        "is_living_artist",
+        "is_loan_defaulter",
+        "is_lpg_user",
+        "is_main_bread_earner",
+        "is_maintained_by_relative",
+        "is_maintaining_academic_progress",
+        "is_male",
+        "is_mall_cinema_house",
+        "is_marriage_legally_attained",
+        "is_matribhasha_satyagrahi_1957",
+        "is_medal_winner",
+        "is_mentally_retarded",
+        "is_meritorious_ias_aspirant",
+        "is_mother",
+        "is_mse_owner",
+        "is_nascent_startup",
+        "is_natural_death",
+        "is_ncc_cadet",
+        "is_needy",
+        "is_nehru_yuva_kendra",
+        "is_nsdf_instructor",
+        "is_ntse_scholar",
+        "is_oci",
+        "is_of_goan_origin",
+        "is_officer",
+        "is_offspring_of_esm",
+        "is_one_per_family",
+        "is_online_coaching",
+        "is_oral_lessee",
+        "is_orchestra_artist",
+        "is_organization_or_ngo",
+        "is_orthopedically_differently_abled",
+        "is_panchayat",
+        "is_panchayati_raj_institution",
+        "is_para_teacher",
+        "is_plus_two_passout",
+        "is_pocso_victim",
+        "is_politically_affiliated",
+        "is_politician_or_aspiring",
+        "is_popular_and_famous",
+        "is_porter",
+        "is_potentially_viable",
+        "is_pottery_artisan",
+        "is_poultry_industry",
+        "is_power_intensive_unit",
+        "is_practicing_priest",
+        "is_pradhan_samajpati",
+        "is_prd_volunteer",
+        "is_premium_auto_debitable",
+        "is_previously_assisted_recently",
+        "is_primitive_tribe",
+        "is_profitable",
+        "is_property_owner",
+        "is_prospective_entrepreneur",
+        "is_rape_victim",
+        "is_readmitted_for_improvement",
+        "is_recipient_family_pension",
+        "is_recommended",
+        "is_refinancing_takeover_loan",
+        "is_related_mother",
+        "is_remarriage",
+        "is_repacking_without_processing",
+        "is_repeater",
+        "is_representative",
+        "is_researcher_or_scientist",
+        "is_rice_mill",
+        "is_rules_accepted",
+        "is_run_for_profit",
+        "is_running_hand_cart",
+        "is_saathin",
+        "is_safai_karamchari",
+        "is_sanctioned_awaiting_drawal",
+        "is_saw_mill",
+        "is_sawmill",
+        "is_sc_st_enterprise",
+        "is_scheduled_tribe",
+        "is_science_leader",
+        "is_seeking_stipend",
+        "is_self_inflicted_injury",
+        "is_serving_in_goa",
+        "is_share_cropper",
+        "is_skilled_artisan",
+        "is_slaughter_house",
+        "is_slum_dweller",
+        "is_smaller_business_unit",
+        "is_society_or_trust",
+        "is_sole_breadwinner",
+        "is_specially_abled",
+        "is_speech_impaired",
+        "is_ssi_unit",
+        "is_staged_in_advance",
+        "is_state_agitator",
+        "is_sterilization_performed",
+        "is_stop_tampered_meter",
+        "is_street_vendor",
+        "is_subsequent_audit",
+        "is_succeeding_primary_breadwinner",
+        "is_superannuated",
+        "is_supported_by_pmfme",
+        "is_suspended_from_aitt",
+        "is_taxpayer",
+        "is_top_performer",
+        "is_trader",
+        "is_trading_activity",
+        "is_trained_in_mss",
+        "is_transferable",
+        "is_transport_loanee",
+        "is_twin_exception_applies",
+        "is_unauthorized_tournament_disqualifier",
+        "is_unrelated_activity_sought",
+        "is_unwed_mother",
+        "is_upshastri_passout",
+        "is_veteran_tournament_disqualifier",
+        "is_vice_chancellor",
+        "is_visually_impaired",
+        "is_ward_pursuing_education",
+        "is_water_user_association",
+        "is_willing_to_participate",
+        "is_without_shelter",
+        "is_women_led_enterprise",
+        "is_zealous_entrepreneur",
+        "owns_mechanized_fishing_boat",
+        "owns_obm_boat"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "benefit_recipient",
+      "question": "Are you receiving any government benefits?",
+      "fields": [
+        "is_aay_beneficiary",
+        "is_aay_woman_beneficiary",
+        "is_already_availing_benefits",
+        "is_already_availing_fellowship",
+        "is_availing_hostel_facility",
+        "is_availing_multiple_scholarships",
+        "is_availing_other_benefits",
+        "is_availing_other_fellowship",
+        "is_availing_other_scholarship",
+        "is_availing_scheme_benefits",
+        "is_availing_ssip_benefits",
+        "is_beneficiary_deceased",
+        "is_beneficiary_of_gbocwwb",
+        "is_beneficiary_phase_one",
+        "is_beneficiary_pmjay",
+        "is_beneficiary_primary_applicant",
+        "is_beneficiary_under_nfsa",
+        "is_dsfdc_beneficiary",
+        "is_dsss_beneficiary",
+        "is_erstwhile_beneficiary",
+        "is_first_family_beneficiary",
+        "is_first_time_beneficiary",
+        "is_pm_kisan_beneficiary",
+        "is_pmay_beneficiary",
+        "is_pmuy_beneficiary",
+        "is_previous_beneficiary",
+        "is_previous_beneficiary_apungar",
+        "is_receiving_fee_concession",
+        "is_receiving_kalyani_pension",
+        "is_receiving_multiple_scholarships",
+        "is_receiving_other_assistance",
+        "is_receiving_other_fellowship",
+        "is_receiving_other_pension",
+        "is_receiving_other_scholarship",
+        "is_receiving_other_scholarships",
+        "is_receiving_parallel_benefit",
+        "is_receiving_pension_benefits",
+        "is_receiving_preschool_education",
+        "is_receiving_similar_assistance",
+        "is_receiving_subsistence_allowance",
+        "is_sbm_beneficiary",
+        "is_ssip_beneficiary",
+        "is_sterilized_beneficiary",
+        "is_third_sibling_availing",
+        "is_third_sibling_beneficiary"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "govt_employee",
+      "question": "Are you a government employee?",
+      "fields": [
+        "is_banned_by_govt",
+        "is_blacklisted_by_govt",
+        "is_blacklisted_govt_act",
+        "is_consultant_with_govt",
+        "is_contractual_govt_employee",
+        "is_current_govt_consultant",
+        "is_dismissed_govt_employee",
+        "is_employee_of_dips",
+        "is_employee_or_dependent",
+        "is_government_controlled_industry",
+        "is_government_department",
+        "is_government_employee",
+        "is_government_institute_allowed",
+        "is_government_servant",
+        "is_government_service_employee",
+        "is_government_sponsored_project",
+        "is_govt_employee",
+        "is_govt_servant",
+        "is_provisional_employee",
+        "is_recipient_govt_pension",
+        "is_regular_govt_employee",
+        "is_state_govt_approved",
+        "is_state_govt_employee",
+        "is_using_govt_space"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "first_time",
+      "question": "Is this your first time applying for this?",
+      "fields": [
+        "is_first_time_audit",
+        "is_first_time_awardee",
+        "is_first_time_buyer",
+        "is_first_time_pregnancy",
+        "is_first_time_writer",
+        "is_first_timer_applicant",
+        "is_new_crs_setup",
+        "is_new_entity",
+        "is_new_industrial_undertaking",
+        "is_new_industry",
+        "is_new_msme",
+        "is_new_project",
+        "is_new_unit",
+        "is_new_unit_setup",
+        "is_new_weaver",
+        "is_newly_established",
+        "is_newly_set_up",
+        "is_renewal_expenditure"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "activity_status",
+      "question": "Are you currently active/engaged in any work?",
+      "fields": [
+        "is_active_in_literature",
+        "is_active_researcher",
+        "is_active_scientist",
+        "is_actively_engaged",
+        "is_actively_updated",
+        "is_engaged_in_agriculture",
+        "is_engaged_in_fishing",
+        "is_engaged_in_horticulture",
+        "is_engaged_in_marketing",
+        "is_engaged_in_research",
+        "is_engaged_in_spinning",
+        "is_engaged_in_tuition",
+        "is_engaged_in_vending",
+        "is_engaged_in_weaving",
+        "is_linked_account_active",
+        "is_physically_active"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "education",
+      "question": "What is your highest education level?",
+      "fields": [
+        "is_college_dropout",
+        "is_college_librarian",
+        "is_currently_attending_school",
+        "is_failed_last_year",
+        "is_failed_previous_year",
+        "is_failing_current_class",
+        "is_failing_same_standard",
+        "is_in_continuous_study",
+        "is_madhyamik_failed",
+        "is_out_of_school",
+        "is_school",
+        "is_school_dropout",
+        "is_school_going",
+        "is_special_school"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "pursuing",
+      "question": "What are you currently studying or pursuing?",
+      "fields": [
+        "is_pursuing_correspondence_course",
+        "is_pursuing_distance_education",
+        "is_pursuing_double_graduation",
+        "is_pursuing_education_continuously",
+        "is_pursuing_equivalent_course",
+        "is_pursuing_higher_education",
+        "is_pursuing_higher_studies",
+        "is_pursuing_integrated_pg",
+        "is_pursuing_other_course",
+        "is_pursuing_post_graduation",
+        "is_pursuing_ug_pg",
+        "is_pursuing_under_graduation"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "contribution",
+      "question": "Are you currently contributing to any fund?",
+      "fields": [
+        "is_continuously_depositing_contributions",
+        "is_contributing_regularly",
+        "is_contributing_to_fund",
+        "is_contributing_to_lwf",
+        "is_contributing_to_society",
+        "is_contribution_remitted_regularly",
+        "is_depositing_contribution_regularly",
+        "is_depositing_contributions",
+        "is_regularly_depositing_contributions",
+        "is_remitting_regular_contributions",
+        "is_tamil_literature_contributor"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "parent_status",
+      "question": "Do you have children?",
+      "fields": [
+        "is_affected_by_child_marriage",
+        "is_artisan_or_craftsperson",
+        "is_both_parents_convicts",
+        "is_daughter",
+        "is_daughter_married",
+        "is_parent_alive",
+        "is_parent_co_borrower",
+        "is_parent_dependent",
+        "is_parent_weaver_artisan",
+        "is_specially_abled_parent"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "in",
+      "question": "Are you involved in any activity?",
+      "fields": [
+        "is_in_commercial_production",
+        "is_in_distress",
+        "is_in_distress_situation",
+        "is_in_good_health",
+        "is_in_moral_danger",
+        "is_in_negative_list",
+        "is_in_penury",
+        "is_in_regular_repayment",
+        "is_in_regular_service",
+        "is_in_restrictive_list"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "health_condition",
+      "question": "Do you have any health conditions?",
+      "fields": [
+        "is_cancer_patient",
+        "is_confirmed_silicosis_patient",
+        "is_death_disease_related",
+        "is_leprosy_patient",
+        "is_sick_industrial_enterprise",
+        "is_sick_or_old",
+        "is_sick_unit",
+        "is_suffering_from_cancer",
+        "is_tb_patient"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "native",
+      "question": "What is your native state?",
+      "fields": [
+        "is_native_of_chhattisgarh",
+        "is_native_of_gujarat",
+        "is_native_of_india",
+        "is_native_of_kerala",
+        "is_native_of_mp",
+        "is_native_of_puducherry",
+        "is_native_of_rajasthan",
+        "is_native_of_up",
+        "is_native_of_uttarakhand"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "verification",
+      "question": "Have you been verified by any authority?",
+      "fields": [
+        "is_aicte_approved",
+        "is_approved_by_aicte",
+        "is_approved_by_department",
+        "is_approved_by_secretary",
+        "is_approved_institution",
+        "is_course_change_unapproved",
+        "is_dpiit_approved",
+        "is_international_exhibition_approved"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "employment",
+      "question": "Are you employed?",
+      "fields": [
+        "is_currently_employed",
+        "is_full_time_employment",
+        "is_in_civil_employment",
+        "is_occupational_group_preference",
+        "is_seeking_employment",
+        "primary_occupation"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "disaster_affected",
+      "question": "Have you been affected by any disaster?",
+      "fields": [
+        "is_affected_by_disaster",
+        "is_damaged_by_calamity",
+        "is_disaster_affected",
+        "is_disaster_affected_artisan",
+        "is_disaster_affected_family"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "existing",
+      "question": "Do you have existing benefits?",
+      "fields": [
+        "is_existing_assisted_unit",
+        "is_existing_coir_entrepreneur",
+        "is_existing_industry",
+        "is_existing_kvi",
+        "is_existing_unit_expansion"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "national",
+      "question": "Are you involved in national work?",
+      "fields": [
+        "holds_national_fellowship",
+        "is_national_fellow_applicant",
+        "is_national_professor_applicant",
+        "is_national_visitor"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "artist",
+      "question": "Are you an artist?",
+      "fields": [
+        "is_artist",
+        "is_artist_of_assam",
+        "is_artist_or_author",
+        "is_artist_or_litterateur"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "covered",
+      "question": "Are you covered under any scheme?",
+      "fields": [
+        "is_covered_by_esic",
+        "is_covered_pm_cares",
+        "is_covered_under_epf",
+        "is_covered_under_igndps"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "deceased",
+      "question": "Is the applicant deceased?",
+      "fields": [
+        "is_deceased",
+        "is_deceased_artist",
+        "is_deceased_at_application",
+        "is_deceased_before_assistance"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "family",
+      "question": "What is your family type?",
+      "fields": [
+        "is_family_extinct",
+        "is_family_fragmented",
+        "is_family_head_deceased",
+        "is_family_lost_breadwinner"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "work_type",
+      "question": "What type of work do you do?",
+      "fields": [
+        "is_full_time_education",
+        "is_full_time_program",
+        "is_full_time_scholar",
+        "is_part_time_instructor"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "goan",
+      "question": "Are you from Goa?",
+      "fields": [
+        "is_goan_artist",
+        "is_goan_by_birth",
+        "is_goan_diaspora_leadership",
+        "is_goan_institution"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "indian",
+      "question": "Are you an Indian citizen?",
+      "fields": [
+        "is_indian_agency",
+        "is_indian_entity",
+        "is_indian_institution",
+        "is_indian_origin"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "previous",
+      "question": "Have you received this before?",
+      "fields": [
+        "is_previous_dvp",
+        "is_previous_fellowship_completed",
+        "is_previous_project_participant",
+        "is_previous_unit_viable"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "private",
+      "question": "Are you from private sector?",
+      "fields": [
+        "is_private_bus_operator",
+        "is_private_educational_institution",
+        "is_private_recognized_institution",
+        "is_private_trust"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "undergoing",
+      "question": "Are you undergoing any training?",
+      "fields": [
+        "is_undergoing_apprenticeship",
+        "is_undergoing_coaching",
+        "is_undergoing_lockout",
+        "is_undergoing_treatment"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "attending",
+      "question": "Are you attending school or college?",
+      "fields": [
+        "is_attending_formal_education",
+        "is_attending_regular_classes",
+        "is_attending_training"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "author",
+      "question": "Are you an author or writer?",
+      "fields": [
+        "is_author",
+        "is_author_or_writer",
+        "is_author_writer"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "certified",
+      "question": "Are you certified?",
+      "fields": [
+        "is_certified_by_spc",
+        "is_certified_mental_retardation",
+        "is_certified_startup"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "currently",
+      "question": "What is your current status?",
+      "fields": [
+        "is_currently_cultivating_spices",
+        "is_currently_cultivating_vegetables",
+        "is_currently_in_piti"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "defaulter",
+      "question": "Are you a defaulter?",
+      "fields": [
+        "is_defaulter",
+        "is_defaulter_dsfdc_schemes",
+        "is_defaulter_with_society"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "first",
+      "question": "Is this your first attempt?",
+      "fields": [
+        "is_first_attempt_pass",
+        "is_first_marriage",
+        "is_first_marriage_benefit"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "holding",
+      "question": "Are you holding any position?",
+      "fields": [
+        "is_holding_other_scholarship",
+        "is_holding_other_stipend",
+        "is_holding_power_fellowship"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "institution",
+      "question": "Are you affiliated with any institution?",
+      "fields": [
+        "is_institution",
+        "is_institution_or_company",
+        "is_institution_representative"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "livestock",
+      "question": "Do you have livestock?",
+      "fields": [
+        "is_livestock_keeper",
+        "is_livestock_owner",
+        "is_livestock_rearer"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "msme",
+      "question": "Are you registered under MSME?",
+      "fields": [
+        "is_msme",
+        "is_msme_or_startup",
+        "is_msme_unit"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "promoted",
+      "question": "Are you a promoted candidate?",
+      "fields": [
+        "is_promoted_by_arsrlm",
+        "is_promoted_by_women",
+        "is_promoted_without_passing"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "recognized",
+      "question": "Are you recognized by government?",
+      "fields": [
+        "is_recognized",
+        "is_recognized_artist",
+        "is_recognized_institution"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "research",
+      "question": "Are you a researcher?",
+      "fields": [
+        "is_research_institute_researcher",
+        "is_research_scholar",
+        "is_research_scholar_law"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "retired",
+      "question": "Are you retired?",
+      "fields": [
+        "is_retired",
+        "is_retired_inae_fellow",
+        "is_retired_journalist"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "scholar",
+      "question": "Are you a scholar?",
+      "fields": [
+        "is_scholar_astrology",
+        "is_scholar_vastu",
+        "is_scholar_veda"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "service",
+      "question": "Are you in government service?",
+      "fields": [
+        "is_service_enterprise",
+        "is_service_medal_awardee",
+        "is_service_msme"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "victim",
+      "question": "Are you a victim of any crime or disaster?",
+      "fields": [
+        "is_victim_of_csexploitation",
+        "is_victim_or_dependent",
+        "is_victim_trafficking"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "voluntary",
+      "question": "Are you a volunteer?",
+      "fields": [
+        "is_voluntary_abandonment",
+        "is_voluntary_institution",
+        "is_voluntary_organization"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "accredited",
+      "question": "Are you accredited?",
+      "fields": [
+        "is_accredited",
+        "is_accredited_journalist"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "membership",
+      "question": "Are you a member of any organization?",
+      "fields": [
+        "is_active_member",
+        "is_ayush_teaching_institute_registered_under_imcc_act_1970_or_hcc_act_1973"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "agriculture",
+      "question": "Are you involved in agriculture?",
+      "fields": [
+        "is_agriculture_connection_holder",
+        "is_agriculture_related_firm"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "already",
+      "question": "Have you already applied for this?",
+      "fields": [
+        "is_already_incentivized",
+        "is_already_trained"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "associated",
+      "question": "Are you associated with any organization?",
+      "fields": [
+        "is_associated_artisan",
+        "is_associated_business_owner"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "continuing",
+      "question": "Are you continuing your studies?",
+      "fields": [
+        "is_continuing_education",
+        "is_continuing_studies"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "credit",
+      "question": "Do you have credit/loan?",
+      "fields": [
+        "is_credit_defaulter",
+        "is_credit_defaulter_entity"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "cured",
+      "question": "Have you been cured of any disease?",
+      "fields": [
+        "is_cured_leprosy",
+        "is_cured_silicosis"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "death",
+      "question": "Has any family member passed away?",
+      "fields": [
+        "is_death_event",
+        "is_death_while_working"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "destitute",
+      "question": "Are you destitute?",
+      "fields": [
+        "is_destitute",
+        "is_destitute_or_homeless"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "direct",
+      "question": "Are you a direct applicant?",
+      "fields": [
+        "is_direct_exporter",
+        "is_direct_implementer"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "dowry",
+      "question": "Are you from a family that practices dowry?",
+      "fields": [
+        "is_dowry_free_marriage",
+        "is_dowry_victim"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "dpiit",
+      "question": "Are you DPIIT registered?",
+      "fields": [
+        "is_dpiit_recognized",
+        "is_dpiit_recognized_startup"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "dropout",
+      "question": "Are you a school dropout?",
+      "fields": [
+        "is_dropout",
+        "is_dropout_from_anc"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "from",
+      "question": "Where are you from?",
+      "fields": [
+        "is_from_ner",
+        "is_from_uttarakhand"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "general",
+      "question": "Are you from general category?",
+      "fields": [
+        "is_general_public",
+        "is_general_public_applicant"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "handloom",
+      "question": "Are you a handloom weaver?",
+      "fields": [
+        "is_handloom_khadi_weaver",
+        "is_handloom_weaver"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "hearing",
+      "question": "Do you have hearing impairment?",
+      "fields": [
+        "is_hearing_challenged",
+        "is_hearing_impaired"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "hiv",
+      "question": "Are you HIV positive?",
+      "fields": [
+        "is_hiv_infected",
+        "is_hiv_positive"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "independent",
+      "question": "Are you self-employed?",
+      "fields": [
+        "is_independent",
+        "is_independent_legal_entity"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "indigent",
+      "question": "Are you from an indigent family?",
+      "fields": [
+        "is_indigent",
+        "is_indigent_artist"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "industry",
+      "question": "Are you in manufacturing industry?",
+      "fields": [
+        "is_industry_or_association",
+        "is_industry_responsive"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "international",
+      "question": "Are you involved in international work?",
+      "fields": [
+        "is_international_olympiad_medallist",
+        "is_international_visitor"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "involved",
+      "question": "Are you involved in any work?",
+      "fields": [
+        "is_involved_in_agriculture",
+        "is_involved_in_misconduct"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "it",
+      "question": "Does it apply to you?",
+      "fields": [
+        "is_it_industry",
+        "is_it_savvy"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "journalist",
+      "question": "Are you a journalist?",
+      "fields": [
+        "is_journalist",
+        "is_journalist_or_dependent"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "khadi",
+      "question": "Are you a khadi worker?",
+      "fields": [
+        "is_khadi_artisan",
+        "is_khadi_institution"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "pregnancy_status",
+      "question": "Are you pregnant or lactating?",
+      "fields": [
+        "is_lactating_mother",
+        "is_pregnant"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "legal",
+      "question": "Do you have any legal cases?",
+      "fields": [
+        "is_legal_entity",
+        "is_legal_heir"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "listed",
+      "question": "Are you listed in any registry?",
+      "fields": [
+        "is_listed_by_spc",
+        "is_listed_in_survey"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "local",
+      "question": "Are you a local person?",
+      "fields": [
+        "is_local_body",
+        "is_local_startup"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "located",
+      "question": "Are you located in a specific area?",
+      "fields": [
+        "is_located_in_goa",
+        "is_located_in_gujarat"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "mass",
+      "question": "Are you involved in mass programs?",
+      "fields": [
+        "is_mass_marriage_event",
+        "is_mass_marriage_required"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "mega",
+      "question": "Are you from mega enterprise?",
+      "fields": [
+        "is_mega_industry",
+        "is_mega_project_disqualifier"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "mp",
+      "question": "Are you an MP?",
+      "fields": [
+        "is_mp_native",
+        "is_mp_or_mla"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "ngo",
+      "question": "Are you from an NGO?",
+      "fields": [
+        "is_ngo",
+        "is_ngo_representative"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "gender",
+      "question": "What is your gender?",
+      "fields": [
+        "is_one_partner_transgender",
+        "is_transgender"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "base"
+    },
+    {
+      "concept": "only",
+      "question": "Are you the only applicant?",
+      "fields": [
+        "is_only_earner_deceased",
+        "is_only_family_applicant"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "original",
+      "question": "Is this an original work?",
+      "fields": [
+        "is_original_creation",
+        "is_original_work"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "physically",
+      "question": "Do you have physical disability?",
+      "fields": [
+        "is_physically_fit",
+        "is_physically_medically_fit"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "political",
+      "question": "Are you politically affiliated?",
+      "fields": [
+        "is_political_organization",
+        "is_political_pressure_group"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "poor",
+      "question": "Are you from a poor family?",
+      "fields": [
+        "is_poor",
+        "is_poor_and_destitute"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "posthumous",
+      "question": "Is it a posthumous award?",
+      "fields": [
+        "is_posthumous_application",
+        "is_posthumous_award"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "primary",
+      "question": "Are you the primary applicant?",
+      "fields": [
+        "is_primary_breadwinner",
+        "is_primary_breadwinner_deceased"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "public",
+      "question": "Are you from public sector?",
+      "fields": [
+        "is_public_sector_undertaking",
+        "is_public_trust"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "repeating",
+      "question": "Are you repeating the course?",
+      "fields": [
+        "is_repeating_class",
+        "is_repeating_same_stage"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "scientist",
+      "question": "Are you a scientist?",
+      "fields": [
+        "is_scientist",
+        "is_scientist_or_researcher"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "second",
+      "question": "Is this your second application?",
+      "fields": [
+        "is_second_marriage",
+        "is_second_time_recipient"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "small",
+      "question": "Are you from small scale industry?",
+      "fields": [
+        "is_small_tea_grower",
+        "is_small_trader"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "suffering",
+      "question": "Are you suffering from any disease?",
+      "fields": [
+        "is_suffering_from_eunuchism",
+        "is_suffering_from_silicosis"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "sugar",
+      "question": "Are you in sugar industry?",
+      "fields": [
+        "is_sugar_cooperative_society",
+        "is_sugar_industry"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "tea",
+      "question": "Are you a tea worker?",
+      "fields": [
+        "is_tea_garden_owner",
+        "is_tea_plantation"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "teacher",
+      "question": "Are you a teacher?",
+      "fields": [
+        "is_teacher",
+        "is_teacher_including_contractual"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "under",
+      "question": "Are you under any scheme?",
+      "fields": [
+        "is_under_disciplinary_action",
+        "is_under_revival_plan"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "working",
+      "question": "Are you currently working?",
+      "fields": [
+        "is_working_in_establishment",
+        "is_working_journalist"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "writer",
+      "question": "Are you a writer?",
+      "fields": [
+        "is_writer",
+        "is_writer_author"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "youth",
+      "question": "Are you a youth?",
+      "fields": [
+        "is_youth",
+        "is_youth_preference"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "fisherman",
+      "question": "Are you a fisherman?",
+      "fields": [
+        "is_active_fisherman"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "land_ownership",
+      "question": "Do you own agricultural land?",
+      "fields": [
+        "is_agricultural_land"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "pensioner",
+      "question": "Are you a pensioner?",
+      "fields": [
+        "is_all_india_services_officer_or_pensioner"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "orphan",
+      "question": "Are you an orphan?",
+      "fields": [
+        "is_child_in_govt_orphanage"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "tribal",
+      "question": "Are you a tribal person?",
+      "fields": [
+        "is_in_tribal_area"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "ews",
+      "question": "Are you from EWS?",
+      "fields": [
+        "is_newspaper_hawker"
+      ],
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "age",
+      "question": "What is your age?",
+      "type": "number",
+      "options": null,
+      "input_hint": "Enter your age in years",
+      "fields": [
+        "age"
+      ],
+      "type_group": "base"
+    },
+    {
+      "concept": "category",
+      "question": "What is your caste category?",
+      "type": "single_choice",
+      "options": [
+        "general",
+        "obc",
+        "sc",
+        "st",
+        "ews"
+      ],
+      "input_hint": "Select category",
+      "fields": [
+        "category",
+        "caste_category"
+      ],
+      "type_group": "base"
+    },
+    {
+      "concept": "state",
+      "question": "Which state do you reside in?",
+      "type": "single_choice",
+      "options": [
+        "andhra_pradesh",
+        "arunachal_pradesh",
+        "assam",
+        "bihar",
+        "chhattisgarh",
+        "goa",
+        "gujarat",
+        "haryana",
+        "himachal_pradesh",
+        "jharkhand",
+        "karnataka",
+        "kerala",
+        "madhya_pradesh",
+        "maharashtra",
+        "manipur",
+        "meghalaya",
+        "mizoram",
+        "nagaland",
+        "odisha",
+        "punjab",
+        "rajasthan",
+        "sikkim",
+        "tamil_nadu",
+        "telangana",
+        "tripura",
+        "uttar_pradesh",
+        "uttarakhand",
+        "west_bengal",
+        "delhi",
+        "jammu_kashmir",
+        "ladakh",
+        "puducherry"
+      ],
+      "input_hint": "Select state",
+      "fields": [
+        "state",
+        "residence_state",
+        "domicile_state"
+      ],
+      "type_group": "base"
+    },
+    {
+      "concept": "annual_income",
+      "question": "What is your annual family income?",
+      "type": "number",
+      "options": null,
+      "input_hint": "Enter amount in rupees",
+      "fields": [
+        "annual_income",
+        "family_income",
+        "annual_family_income"
+      ],
+      "type_group": "base"
+    },
+    {
+      "concept": "residence",
+      "question": "What is your residence type?",
+      "type": "single_choice",
+      "options": [
+        "urban",
+        "rural"
+      ],
+      "input_hint": "urban/rural",
+      "fields": [
+        "residence",
+        "residence_area_type",
+        "residence_status"
+      ],
+      "type_group": "base"
+    },
+    {
+      "concept": "education_level",
+      "question": "What is your highest education?",
+      "type": "single_choice",
+      "options": [
+        "below_10th",
+        "10th_pass",
+        "12th_pass",
+        "graduate",
+        "post_graduate",
+        "phd"
+      ],
+      "input_hint": "Select education level",
+      "fields": [
+        "education_level",
+        "current_class",
+        "course_level"
+      ],
+      "type_group": "base"
+    },
+    {
+      "concept": "occupation",
+      "question": "What is your occupation?",
+      "type": "single_choice",
+      "options": [
+        "student",
+        "farmer",
+        "self_employed",
+        "salaried",
+        "unemployed",
+        "business",
+        "homemaker",
+        "retired"
+      ],
+      "input_hint": "Select occupation",
+      "fields": [
+        "occupation",
+        "occupation_type",
+        "employment_status"
+      ],
+      "type_group": "base"
+    },
+    {
+      "concept": "marital_status",
+      "question": "What is your marital status?",
+      "type": "single_choice",
+      "options": [
+        "single",
+        "married",
+        "divorced",
+        "widowed"
+      ],
+      "input_hint": "Select marital status",
+      "fields": [
+        "marital_status"
+      ],
+      "type_group": "base"
+    },
+    {
+      "concept": "has_aadhaar",
+      "question": "Do you have Aadhaar card?",
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "fields": [
+        "has_aadhaar",
+        "has_aadhaar_card"
+      ],
+      "type_group": "base"
+    },
+    {
+      "concept": "has_bank_account",
+      "question": "Do you have a bank account?",
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "fields": [
+        "has_bank_account",
+        "has_savings_bank_account"
+      ],
+      "type_group": "base"
+    },
+    {
+      "concept": "is_disabled",
+      "question": "Do you have any disability?",
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "fields": [
+        "is_disabled",
+        "is_differently_abled"
+      ],
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "is_nri",
+      "question": "Are you an NRI?",
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "fields": [
+        "is_nri"
+      ],
+      "type_group": "dynamic"
+    },
+    {
+      "concept": "is_citizen",
+      "question": "Are you an Indian citizen?",
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "fields": [
+        "is_citizen",
+        "is_indian_citizen",
+        "is_citizen_of_india"
+      ],
+      "type_group": "base"
+    },
+    {
+      "concept": "goat_farming",
+      "question": "Do you have a license for goat farming?",
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic",
+      "fields": [
+        "has_goat_farming_license"
+      ]
+    },
+    {
+      "concept": "poultry_ownership",
+      "question": "Do you own a poultry farm?",
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic",
+      "fields": [
+        "has_poultry_farm"
+      ]
+    },
+    {
+      "concept": "rural_entrepreneur",
+      "question": "Do you run a business in a rural area?",
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic",
+      "fields": [
+        "is_rural_entrepreneur"
+      ]
+    },
+    {
+      "concept": "cattle_herd",
+      "question": "Do you own a herd of cattle?",
+      "type": "boolean",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "input_hint": "yes/no",
+      "type_group": "dynamic",
+      "fields": [
+        "owns_cattle_herd"
+      ]
+    },
+    {
+      "concept": "citizenship",
+      "question": "Are you an Indian citizen?",
+      "fields": [
+        "is_indian_citizen",
+        "is_citizen",
+        "is_citizen_of_india",
+        "is_indian_national",
+        "is_nri",
+        "citizenship",
+        "residency_status",
+        "is_resident"
+      ]
+    },
+    {
+      "concept": "student_status",
+      "question": "Are you a student?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_student"]
+    },
+    {
+      "concept": "farmer",
+      "question": "Are you a farmer?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_farmer"]
+    },
+    {
+      "concept": "industrial_worker",
+      "question": "Are you an industrial worker?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_industrial_worker"]
+    },
+    {
+      "concept": "is_tribal",
+      "question": "Do you belong to a Scheduled Tribe (ST)?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_tribal"]
+    },
+    {
+      "concept": "is_landless",
+      "question": "Do you own no agricultural land?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_landless"]
+    },
+    {
+      "concept": "is_orphan",
+      "question": "Are you an orphan (both parents deceased)?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_orphan"]
+    },
+    {
+      "concept": "is_pensioner",
+      "question": "Are you a pensioner?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_pensioner"]
+    },
+    {
+      "concept": "disability",
+      "question": "What is your disability percentage?",
+      "type": "integer",
+      "options": [],
+      "input_hint": "percentage",
+      "fields": ["disability_percentage", "disability"]
+    },
+    {
+      "concept": "is_widow",
+      "question": "Are you a widow?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_widow", "is_widow_single_woman"]
+    },
+    {
+      "concept": "is_bocw_registered",
+      "question": "Are you registered under BOCW (Building and Other Construction Workers)?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_bocw_registered"]
+    },
+    {
+      "concept": "is_school_dropout",
+      "question": "Are you a school dropout?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_school_dropout"]
+    },
+    {
+      "concept": "is_first_gen_student",
+      "question": "Are you a first-generation student?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_first_gen_student"]
+    },
+    {
+      "concept": "has_ration_card",
+      "question": "Do you have a ration card?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["has_ration_card", "ration_card_available"]
+    },
+    {
+      "concept": "is_senior_citizen",
+      "question": "Are you a senior citizen (60 years or above)?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_senior_citizen"]
+    },
+    {
+      "concept": "has_pucca_house",
+      "question": "Do you have a pucca (permanent) house?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["has_pucca_house"]
+    },
+    {
+      "concept": "domicile_status",
+      "question": "What is your domicile status?",
+      "type": "string",
+      "options": [],
+      "input_hint": "text",
+      "fields": ["domicile_status"]
+    },
+    {
+      "concept": "district",
+      "question": "Which district do you live in?",
+      "type": "string",
+      "options": [],
+      "input_hint": "text",
+      "fields": ["district"]
+    },
+    {
+      "concept": "block_taluk",
+      "question": "Which block/taluk do you live in?",
+      "type": "string",
+      "options": [],
+      "input_hint": "text",
+      "fields": ["block_taluk"]
+    },
+    {
+      "concept": "child_age",
+      "question": "What is your child's age?",
+      "type": "integer",
+      "options": [],
+      "input_hint": "years",
+      "fields": ["child_age"]
+    },
+    {
+      "concept": "is_head_of_family",
+      "question": "Are you the head of the family?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_head_of_family"]
+    },
+    {
+      "concept": "has_income_certificate",
+      "question": "Do you have an income certificate?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["income_certificate_available"]
+    },
+    {
+      "concept": "ration_card_type",
+      "question": "What type of ration card do you have?",
+      "type": "string",
+      "options": ["AAY", "PHH", "SPHH", "none"],
+      "input_hint": "select",
+      "fields": ["ration_card_type"]
+    },
+    {
+      "concept": "has_land",
+      "question": "Do you own agricultural land?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["own_agricultural_land"]
+    },
+    {
+      "concept": "land_size",
+      "question": "How much agricultural land do you own (in acres)?",
+      "type": "float",
+      "options": [],
+      "input_hint": "acres",
+      "fields": ["land_size_acres", "land_owned_acres"]
+    },
+    {
+      "concept": "land_type",
+      "question": "What type of land do you own?",
+      "type": "string",
+      "options": [],
+      "input_hint": "text",
+      "fields": ["land_type"]
+    },
+    {
+      "concept": "is_tenant_farmer",
+      "question": "Are you a tenant farmer (lease holder)?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_tenant_farmer"]
+    },
+    {
+      "concept": "career_goal",
+      "question": "What is your career goal?",
+      "type": "string",
+      "options": [],
+      "input_hint": "text",
+      "fields": ["career_goal"]
+    },
+    {
+      "concept": "previous_beneficiary",
+      "question": "Have you previously availed any government scheme?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["scheme_previously_availed"]
+    },
+    {
+      "concept": "has_willingness",
+      "question": "Are you willing to submit required documents?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["willing_to_submit_docs"]
+    },
+    {
+      "concept": "has_documents",
+      "question": "Do you have the required documents available?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["documents_available"]
+    },
+    {
+      "concept": "has_mobile_linked_bank",
+      "question": "Is your bank account linked to mobile?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["mobile_linked_bank"]
+    },
+    {
+      "concept": "is_ews",
+      "question": "Do you belong to Economically Weaker Section (EWS)?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["ews_status", "is_ews"]
+    },
+    {
+      "concept": "is_minority",
+      "question": "Do you belong to a minority community?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_minority", "minority_status"]
+    },
+    {
+      "concept": "is_abandoned_woman",
+      "question": "Are you an abandoned woman?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_abandoned_woman"]
+    },
+    {
+      "concept": "is_single_woman",
+      "question": "Are you a single woman?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_single_woman"]
+    },
+    {
+      "concept": "is_acid_attack_survivor",
+      "question": "Are you an acid attack survivor?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_acid_attack_survivor"]
+    },
+    {
+      "concept": "is_migrant_worker",
+      "question": "Are you a migrant worker?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_migrant_worker"]
+    },
+    {
+      "concept": "is_ex_serviceman_or_dependent",
+      "question": "Are you an ex-serviceman or dependent of one?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_ex_serviceman_or_dependent"]
+    },
+    {
+      "concept": "is_shg_member",
+      "question": "Are you a member of a Self-Help Group (SHG)?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_shg_member"]
+    },
+    {
+      "concept": "is_freedom_fighter_or_dependent",
+      "question": "Are you a freedom fighter or dependent of one?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_freedom_fighter_or_dependent"]
+    },
+    {
+      "concept": "has_critical_illness",
+      "question": "Do you have a critical illness?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["has_critical_illness"]
+    },
+    {
+      "concept": "is_pregnant",
+      "question": "Are you currently pregnant?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_pregnant"]
+    },
+    {
+      "concept": "is_lactating_mother",
+      "question": "Are you a lactating mother?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["is_lactating_mother"]
+    },
+    {
+      "concept": "govt_employee",
+      "question": "Is any family member a government employee?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["govt_employee_in_family", "is_govt_employee"]
+    },
+    {
+      "concept": "achievement",
+      "question": "Do you have achievement certificates?",
+      "type": "string",
+      "options": [],
+      "input_hint": "text",
+      "fields": ["achievement_certificates"]
+    },
+    {
+      "concept": "family_type",
+      "question": "What type of family do you belong to?",
+      "type": "string",
+      "options": [],
+      "input_hint": "text",
+      "fields": ["family_type"]
+    },
+    {
+      "concept": "family_size",
+      "question": "How many family members do you have?",
+      "type": "integer",
+      "options": [],
+      "input_hint": "number",
+      "fields": ["total_family_members"]
+    },
+    {
+      "concept": "occupation",
+      "question": "What is your occupation?",
+      "type": "string",
+      "options": [],
+      "input_hint": "text",
+      "fields": ["occupation", "occupation_type", "father_occupation", "mother_occupation"]
+    },
+    {
+      "concept": "institution_type",
+      "question": "What type of institution?",
+      "type": "string",
+      "options": [],
+      "input_hint": "text",
+      "fields": ["institution_type"]
+    },
+    {
+      "concept": "education_level",
+      "question": "What is your education level?",
+      "type": "string",
+      "options": [],
+      "input_hint": "text",
+      "fields": ["highest_education_level"]
+    },
+    {
+      "concept": "education_status",
+      "question": "What is your current education status?",
+      "type": "string",
+      "options": [],
+      "input_hint": "text",
+      "fields": ["education_status", "education"]
+    },
+    {
+      "concept": "employment_status",
+      "question": "What is your employment status?",
+      "type": "string",
+      "options": [],
+      "input_hint": "text",
+      "fields": ["employment_status"]
+    },
+    {
+      "concept": "has_aadhaar_linked_bank",
+      "question": "Is your bank account linked to Aadhaar?",
+      "type": "boolean",
+      "options": ["yes", "no"],
+      "input_hint": "yes/no",
+      "fields": ["aadhaar_linked_bank"]
+    },
+    {
+      "concept": "mobile",
+      "question": "What is your mobile number?",
+      "type": "string",
+      "options": [],
+      "input_hint": "phone",
+      "fields": ["mobile"]
+    },
+    {
+      "concept": "dob",
+      "question": "What is your date of birth?",
+      "type": "date",
+      "options": [],
+      "input_hint": "date",
+      "fields": ["dob"]
+    },
+    {
+      "concept": "name",
+      "question": "What is your full name?",
+      "type": "string",
+      "options": [],
+      "input_hint": "text",
+      "fields": ["name"]
+    },
+    {
+      "concept": "email",
+      "question": "What is your email address?",
+      "type": "string",
+      "options": [],
+      "input_hint": "email",
+      "fields": ["email"]
+    }
+  ],
+  "field_to_concept": {
+    "holds_market_committee_license": "other",
+    "is_aay_family": "other",
+    "is_academically_weak": "other",
+    "is_activity_manufacturing_or_specified": "other",
+    "is_adolescent_girl": "other",
+    "is_adult": "other",
+    "is_advocate": "other",
+    "is_affected_by_autism": "other",
+    "is_affiliated_with_university": "other",
+    "is_agricultural_laborer": "other",
+    "is_agriculturist": "other",
+    "is_amateur_player": "other",
+    "is_anganwadi_worker": "other",
+    "is_antyodaya_family": "other",
+    "is_application_complete": "other",
+    "is_appreciation_award_grantee": "other",
+    "is_art_institute_student": "other",
+    "is_artisan": "other",
+    "is_asbestos_processor": "other",
+    "is_asha_sahayogi": "other",
+    "is_attendant_accompanying": "other",
+    "is_award_recipient_previously": "other",
+    "is_backward_class": "other",
+    "is_bank_defaulter": "other",
+    "is_bengali_speaking": "other",
+    "is_bhajan_performer": "other",
+    "is_blacklisted_fcra": "other",
+    "is_blind": "other",
+    "is_born_in_goa": "other",
+    "is_boy": "other",
+    "is_breach_of_law": "other",
+    "is_brewery_or_distillery": "other",
+    "is_bsc_final_year": "other",
+    "is_building_previously_occupied": "other",
+    "is_business_trading_activity": "other",
+    "is_caretaker_of_disabled": "other",
+    "is_carrying_prohibited_items": "other",
+    "is_cattle_breeder": "other",
+    "is_cement_industry": "other",
+    "is_central_funded_institution": "other",
+    "is_centrally_funded": "other",
+    "is_charitable_company": "other",
+    "is_chhattisgarh_native": "other",
+    "is_claim_duplicate": "other",
+    "is_classical_music_artist": "other",
+    "is_closed_unit": "other",
+    "is_cluster": "other",
+    "is_coir_artisan": "other",
+    "is_commercial_vehicle_driver": "other",
+    "is_compelling_situation_resolved": "other",
+    "is_conflict_with_law": "other",
+    "is_continuous_education": "other",
+    "is_contract_research_only": "other",
+    "is_contractual_teacher": "other",
+    "is_cooperative": "other",
+    "is_corporate_entity": "other",
+    "is_couple_differently_abled": "other",
+    "is_cow_helper": "other",
+    "is_creamy_layer": "other",
+    "is_debarred_previously": "other",
+    "is_defaulted_on_loan": "other",
+    "is_defaulting_developer": "other",
+    "is_democratically_governed": "other",
+    "is_deserted_or_divorced": "other",
+    "is_devadasi": "other",
+    "is_differently_abled": "is_disabled",
+    "is_digitally_illiterate": "other",
+    "is_divyang": "other",
+    "is_divyangjan": "other",
+    "is_domicile_of_india": "other",
+    "is_dual_benefit_availed": "other",
+    "is_edp_training_completed": "other",
+    "is_educated": "other",
+    "is_educational_institution": "other",
+    "is_elderly": "other",
+    "is_endosulfan_victim": "other",
+    "is_energy_meter_running": "other",
+    "is_enlisted_state_portal": "other",
+    "is_entrepreneur": "other",
+    "is_eunuch": "other",
+    "is_ex_convict": "other",
+    "is_false_statement_made": "other",
+    "is_father_deceased": "other",
+    "is_female": "other",
+    "is_ffpo_or_ffpc": "other",
+    "is_fictional_work": "other",
+    "is_film_producer": "other",
+    "is_fish_vendor": "other",
+    "is_fit_to_travel": "other",
+    "is_fluent_in_english": "other",
+    "is_folk_artist": "other",
+    "is_for_profit_organization": "other",
+    "is_foreign_national": "other",
+    "is_forest_rights_holder": "other",
+    "is_formed_by_restructuring": "other",
+    "is_fpo": "other",
+    "is_fresh_admission": "other",
+    "is_fully_cured": "other",
+    "is_gmp_compliant": "other",
+    "is_good_borrower": "other",
+    "is_green_energy_consumer": "other",
+    "is_groom_differently_abled": "other",
+    "is_group_firm_organization": "other",
+    "is_habitual_beggar": "other",
+    "is_handicraft_artisan": "other",
+    "is_head_of_family": "other",
+    "is_high_risk_pregnancy": "other",
+    "is_homeless_and_separated": "other",
+    "is_hostel_stipend_applicant": "other",
+    "is_ias_officer": "other",
+    "is_icssr_fund_defaulter": "other",
+    "is_immunized": "other",
+    "is_implementing_agency": "other",
+    "is_included_in_secc": "other",
+    "is_industrial_unit": "other",
+    "is_industrialist": "other",
+    "is_infrastructure_project": "other",
+    "is_institutional_applicant": "other",
+    "is_interested_in_entrepreneurship": "other",
+    "is_invitational_tournament_disqualifier": "other",
+    "is_invited_expert": "other",
+    "is_iron_steel_smelting": "other",
+    "is_jbnsts_scholar": "other",
+    "is_jc_bose_fellow": "other",
+    "is_joint_borrower": "other",
+    "is_kerala_origin": "other",
+    "is_kvpy_scholar": "other",
+    "is_labour_intensive_unit": "other",
+    "is_large_group": "other",
+    "is_law_officer": "other",
+    "is_leather_artisan": "other",
+    "is_legally_divorced": "other",
+    "is_leprosy_affected": "other",
+    "is_less_educated": "other",
+    "is_literate": "other",
+    "is_litterateur": "other",
+    "is_living_artist": "other",
+    "is_loan_defaulter": "other",
+    "is_lpg_user": "other",
+    "is_main_bread_earner": "other",
+    "is_maintained_by_relative": "other",
+    "is_maintaining_academic_progress": "other",
+    "is_male": "other",
+    "is_mall_cinema_house": "other",
+    "is_marriage_legally_attained": "other",
+    "is_matribhasha_satyagrahi_1957": "other",
+    "is_medal_winner": "other",
+    "is_mentally_retarded": "other",
+    "is_meritorious_ias_aspirant": "other",
+    "is_mother": "other",
+    "is_mse_owner": "other",
+    "is_nascent_startup": "other",
+    "is_natural_death": "other",
+    "is_ncc_cadet": "other",
+    "is_needy": "other",
+    "is_nehru_yuva_kendra": "other",
+    "is_nsdf_instructor": "other",
+    "is_ntse_scholar": "other",
+    "is_oci": "other",
+    "is_of_goan_origin": "other",
+    "is_officer": "other",
+    "is_offspring_of_esm": "other",
+    "is_one_per_family": "other",
+    "is_online_coaching": "other",
+    "is_oral_lessee": "other",
+    "is_orchestra_artist": "other",
+    "is_organization_or_ngo": "other",
+    "is_orthopedically_differently_abled": "other",
+    "is_panchayat": "other",
+    "is_panchayati_raj_institution": "other",
+    "is_para_teacher": "other",
+    "is_plus_two_passout": "other",
+    "is_pocso_victim": "other",
+    "is_politically_affiliated": "other",
+    "is_politician_or_aspiring": "other",
+    "is_popular_and_famous": "other",
+    "is_porter": "other",
+    "is_potentially_viable": "other",
+    "is_pottery_artisan": "other",
+    "is_poultry_industry": "other",
+    "is_power_intensive_unit": "other",
+    "is_practicing_priest": "other",
+    "is_pradhan_samajpati": "other",
+    "is_prd_volunteer": "other",
+    "is_premium_auto_debitable": "other",
+    "is_previously_assisted_recently": "other",
+    "is_primitive_tribe": "other",
+    "is_profitable": "other",
+    "is_property_owner": "other",
+    "is_prospective_entrepreneur": "other",
+    "is_rape_victim": "other",
+    "is_readmitted_for_improvement": "other",
+    "is_recipient_family_pension": "other",
+    "is_recommended": "other",
+    "is_refinancing_takeover_loan": "other",
+    "is_related_mother": "other",
+    "is_remarriage": "other",
+    "is_repacking_without_processing": "other",
+    "is_repeater": "other",
+    "is_representative": "other",
+    "is_researcher_or_scientist": "other",
+    "is_rice_mill": "other",
+    "is_rules_accepted": "other",
+    "is_run_for_profit": "other",
+    "is_running_hand_cart": "other",
+    "is_saathin": "other",
+    "is_safai_karamchari": "other",
+    "is_sanctioned_awaiting_drawal": "other",
+    "is_saw_mill": "other",
+    "is_sawmill": "other",
+    "is_sc_st_enterprise": "other",
+    "is_scheduled_tribe": "other",
+    "is_science_leader": "other",
+    "is_seeking_stipend": "other",
+    "is_self_inflicted_injury": "other",
+    "is_serving_in_goa": "other",
+    "is_share_cropper": "other",
+    "is_skilled_artisan": "other",
+    "is_slaughter_house": "other",
+    "is_slum_dweller": "other",
+    "is_smaller_business_unit": "other",
+    "is_society_or_trust": "other",
+    "is_sole_breadwinner": "other",
+    "is_specially_abled": "other",
+    "is_speech_impaired": "other",
+    "is_ssi_unit": "other",
+    "is_staged_in_advance": "other",
+    "is_state_agitator": "other",
+    "is_sterilization_performed": "other",
+    "is_stop_tampered_meter": "other",
+    "is_street_vendor": "other",
+    "is_subsequent_audit": "other",
+    "is_succeeding_primary_breadwinner": "other",
+    "is_superannuated": "other",
+    "is_supported_by_pmfme": "other",
+    "is_suspended_from_aitt": "other",
+    "is_taxpayer": "other",
+    "is_top_performer": "other",
+    "is_trader": "other",
+    "is_trading_activity": "other",
+    "is_trained_in_mss": "other",
+    "is_transferable": "other",
+    "is_transport_loanee": "other",
+    "is_twin_exception_applies": "other",
+    "is_unauthorized_tournament_disqualifier": "other",
+    "is_unrelated_activity_sought": "other",
+    "is_unwed_mother": "other",
+    "is_upshastri_passout": "other",
+    "is_veteran_tournament_disqualifier": "other",
+    "is_vice_chancellor": "other",
+    "is_visually_impaired": "other",
+    "is_ward_pursuing_education": "other",
+    "is_water_user_association": "other",
+    "is_willing_to_participate": "other",
+    "is_without_shelter": "other",
+    "is_women_led_enterprise": "other",
+    "is_zealous_entrepreneur": "other",
+    "owns_mechanized_fishing_boat": "other",
+    "owns_obm_boat": "other",
+    "other": "other",
+    "is_aay_beneficiary": "benefit_recipient",
+    "is_aay_woman_beneficiary": "benefit_recipient",
+    "is_already_availing_benefits": "benefit_recipient",
+    "is_already_availing_fellowship": "benefit_recipient",
+    "is_availing_hostel_facility": "benefit_recipient",
+    "is_availing_multiple_scholarships": "benefit_recipient",
+    "is_availing_other_benefits": "benefit_recipient",
+    "is_availing_other_fellowship": "benefit_recipient",
+    "is_availing_other_scholarship": "benefit_recipient",
+    "is_availing_scheme_benefits": "benefit_recipient",
+    "is_availing_ssip_benefits": "benefit_recipient",
+    "is_beneficiary_deceased": "benefit_recipient",
+    "is_beneficiary_of_gbocwwb": "benefit_recipient",
+    "is_beneficiary_phase_one": "benefit_recipient",
+    "is_beneficiary_pmjay": "benefit_recipient",
+    "is_beneficiary_primary_applicant": "benefit_recipient",
+    "is_beneficiary_under_nfsa": "benefit_recipient",
+    "is_dsfdc_beneficiary": "benefit_recipient",
+    "is_dsss_beneficiary": "benefit_recipient",
+    "is_erstwhile_beneficiary": "benefit_recipient",
+    "is_first_family_beneficiary": "benefit_recipient",
+    "is_first_time_beneficiary": "benefit_recipient",
+    "is_pm_kisan_beneficiary": "benefit_recipient",
+    "is_pmay_beneficiary": "benefit_recipient",
+    "is_pmuy_beneficiary": "benefit_recipient",
+    "is_previous_beneficiary": "benefit_recipient",
+    "is_previous_beneficiary_apungar": "benefit_recipient",
+    "is_receiving_fee_concession": "benefit_recipient",
+    "is_receiving_kalyani_pension": "benefit_recipient",
+    "is_receiving_multiple_scholarships": "benefit_recipient",
+    "is_receiving_other_assistance": "benefit_recipient",
+    "is_receiving_other_fellowship": "benefit_recipient",
+    "is_receiving_other_pension": "benefit_recipient",
+    "is_receiving_other_scholarship": "benefit_recipient",
+    "is_receiving_other_scholarships": "benefit_recipient",
+    "is_receiving_parallel_benefit": "benefit_recipient",
+    "is_receiving_pension_benefits": "benefit_recipient",
+    "is_receiving_preschool_education": "benefit_recipient",
+    "is_receiving_similar_assistance": "benefit_recipient",
+    "is_receiving_subsistence_allowance": "benefit_recipient",
+    "is_sbm_beneficiary": "benefit_recipient",
+    "is_ssip_beneficiary": "benefit_recipient",
+    "is_sterilized_beneficiary": "benefit_recipient",
+    "is_third_sibling_availing": "benefit_recipient",
+    "is_third_sibling_beneficiary": "benefit_recipient",
+    "benefit_recipient": "benefit_recipient",
+    "is_banned_by_govt": "govt_employee",
+    "is_blacklisted_by_govt": "govt_employee",
+    "is_blacklisted_govt_act": "govt_employee",
+    "is_consultant_with_govt": "govt_employee",
+    "is_contractual_govt_employee": "govt_employee",
+    "is_current_govt_consultant": "govt_employee",
+    "is_dismissed_govt_employee": "govt_employee",
+    "is_employee_of_dips": "govt_employee",
+    "is_employee_or_dependent": "govt_employee",
+    "is_government_controlled_industry": "govt_employee",
+    "is_government_department": "govt_employee",
+    "is_government_employee": "govt_employee",
+    "is_government_institute_allowed": "govt_employee",
+    "is_government_servant": "govt_employee",
+    "is_government_service_employee": "govt_employee",
+    "is_government_sponsored_project": "govt_employee",
+    "is_govt_employee": "govt_employee",
+    "is_govt_servant": "govt_employee",
+    "is_provisional_employee": "govt_employee",
+    "is_recipient_govt_pension": "govt_employee",
+    "is_regular_govt_employee": "govt_employee",
+    "is_state_govt_approved": "govt_employee",
+    "is_state_govt_employee": "govt_employee",
+    "is_using_govt_space": "govt_employee",
+    "govt_employee": "govt_employee",
+    "is_first_time_audit": "first_time",
+    "is_first_time_awardee": "first_time",
+    "is_first_time_buyer": "first_time",
+    "is_first_time_pregnancy": "first_time",
+    "is_first_time_writer": "first_time",
+    "is_first_timer_applicant": "first_time",
+    "is_new_crs_setup": "first_time",
+    "is_new_entity": "first_time",
+    "is_new_industrial_undertaking": "first_time",
+    "is_new_industry": "first_time",
+    "is_new_msme": "first_time",
+    "is_new_project": "first_time",
+    "is_new_unit": "first_time",
+    "is_new_unit_setup": "first_time",
+    "is_new_weaver": "first_time",
+    "is_newly_established": "first_time",
+    "is_newly_set_up": "first_time",
+    "is_renewal_expenditure": "first_time",
+    "first_time": "first_time",
+    "is_active_in_literature": "activity_status",
+    "is_active_researcher": "activity_status",
+    "is_active_scientist": "activity_status",
+    "is_actively_engaged": "activity_status",
+    "is_actively_updated": "activity_status",
+    "is_engaged_in_agriculture": "activity_status",
+    "is_engaged_in_fishing": "activity_status",
+    "is_engaged_in_horticulture": "activity_status",
+    "is_engaged_in_marketing": "activity_status",
+    "is_engaged_in_research": "activity_status",
+    "is_engaged_in_spinning": "activity_status",
+    "is_engaged_in_tuition": "activity_status",
+    "is_engaged_in_vending": "activity_status",
+    "is_engaged_in_weaving": "activity_status",
+    "is_linked_account_active": "activity_status",
+    "is_physically_active": "activity_status",
+    "activity_status": "activity_status",
+    "is_college_dropout": "education",
+    "is_college_librarian": "education",
+    "is_currently_attending_school": "education",
+    "is_failed_last_year": "education",
+    "is_failed_previous_year": "education",
+    "is_failing_current_class": "education",
+    "is_failing_same_standard": "education",
+    "is_in_continuous_study": "education",
+    "is_madhyamik_failed": "education",
+    "is_out_of_school": "education",
+    "is_school": "education",
+    "is_school_dropout": "education",
+    "is_school_going": "education",
+    "is_special_school": "education",
+    "education": "education",
+    "is_pursuing_correspondence_course": "pursuing",
+    "is_pursuing_distance_education": "pursuing",
+    "is_pursuing_double_graduation": "pursuing",
+    "is_pursuing_education_continuously": "pursuing",
+    "is_pursuing_equivalent_course": "pursuing",
+    "is_pursuing_higher_education": "pursuing",
+    "is_pursuing_higher_studies": "pursuing",
+    "is_pursuing_integrated_pg": "pursuing",
+    "is_pursuing_other_course": "pursuing",
+    "is_pursuing_post_graduation": "pursuing",
+    "is_pursuing_ug_pg": "pursuing",
+    "is_pursuing_under_graduation": "pursuing",
+    "pursuing": "pursuing",
+    "is_continuously_depositing_contributions": "contribution",
+    "is_contributing_regularly": "contribution",
+    "is_contributing_to_fund": "contribution",
+    "is_contributing_to_lwf": "contribution",
+    "is_contributing_to_society": "contribution",
+    "is_contribution_remitted_regularly": "contribution",
+    "is_depositing_contribution_regularly": "contribution",
+    "is_depositing_contributions": "contribution",
+    "is_regularly_depositing_contributions": "contribution",
+    "is_remitting_regular_contributions": "contribution",
+    "is_tamil_literature_contributor": "contribution",
+    "contribution": "contribution",
+    "is_affected_by_child_marriage": "parent_status",
+    "is_artisan_or_craftsperson": "parent_status",
+    "is_both_parents_convicts": "parent_status",
+    "is_daughter": "parent_status",
+    "is_daughter_married": "parent_status",
+    "is_parent_alive": "parent_status",
+    "is_parent_co_borrower": "parent_status",
+    "is_parent_dependent": "parent_status",
+    "is_parent_weaver_artisan": "parent_status",
+    "is_specially_abled_parent": "parent_status",
+    "parent_status": "parent_status",
+    "is_in_commercial_production": "in",
+    "is_in_distress": "in",
+    "is_in_distress_situation": "in",
+    "is_in_good_health": "in",
+    "is_in_moral_danger": "in",
+    "is_in_negative_list": "in",
+    "is_in_penury": "in",
+    "is_in_regular_repayment": "in",
+    "is_in_regular_service": "in",
+    "is_in_restrictive_list": "in",
+    "in": "in",
+    "is_cancer_patient": "health_condition",
+    "is_confirmed_silicosis_patient": "health_condition",
+    "is_death_disease_related": "health_condition",
+    "is_leprosy_patient": "health_condition",
+    "is_sick_industrial_enterprise": "health_condition",
+    "is_sick_or_old": "health_condition",
+    "is_sick_unit": "health_condition",
+    "is_suffering_from_cancer": "health_condition",
+    "is_tb_patient": "health_condition",
+    "health_condition": "health_condition",
+    "is_native_of_chhattisgarh": "native",
+    "is_native_of_gujarat": "native",
+    "is_native_of_india": "native",
+    "is_native_of_kerala": "native",
+    "is_native_of_mp": "native",
+    "is_native_of_puducherry": "native",
+    "is_native_of_rajasthan": "native",
+    "is_native_of_up": "native",
+    "is_native_of_uttarakhand": "native",
+    "native": "native",
+    "is_aicte_approved": "verification",
+    "is_approved_by_aicte": "verification",
+    "is_approved_by_department": "verification",
+    "is_approved_by_secretary": "verification",
+    "is_approved_institution": "verification",
+    "is_course_change_unapproved": "verification",
+    "is_dpiit_approved": "verification",
+    "is_international_exhibition_approved": "verification",
+    "verification": "verification",
+    "is_currently_employed": "employment",
+    "is_full_time_employment": "employment",
+    "is_in_civil_employment": "employment",
+    "is_occupational_group_preference": "employment",
+    "is_seeking_employment": "employment",
+    "primary_occupation": "employment",
+    "employment": "employment",
+    "is_affected_by_disaster": "disaster_affected",
+    "is_damaged_by_calamity": "disaster_affected",
+    "is_disaster_affected": "disaster_affected",
+    "is_disaster_affected_artisan": "disaster_affected",
+    "is_disaster_affected_family": "disaster_affected",
+    "disaster_affected": "disaster_affected",
+    "is_existing_assisted_unit": "existing",
+    "is_existing_coir_entrepreneur": "existing",
+    "is_existing_industry": "existing",
+    "is_existing_kvi": "existing",
+    "is_existing_unit_expansion": "existing",
+    "existing": "existing",
+    "holds_national_fellowship": "national",
+    "is_national_fellow_applicant": "national",
+    "is_national_professor_applicant": "national",
+    "is_national_visitor": "national",
+    "national": "national",
+    "is_artist": "artist",
+    "is_artist_of_assam": "artist",
+    "is_artist_or_author": "artist",
+    "is_artist_or_litterateur": "artist",
+    "artist": "artist",
+    "is_covered_by_esic": "covered",
+    "is_covered_pm_cares": "covered",
+    "is_covered_under_epf": "covered",
+    "is_covered_under_igndps": "covered",
+    "covered": "covered",
+    "is_deceased": "deceased",
+    "is_deceased_artist": "deceased",
+    "is_deceased_at_application": "deceased",
+    "is_deceased_before_assistance": "deceased",
+    "deceased": "deceased",
+    "is_family_extinct": "family",
+    "is_family_fragmented": "family",
+    "is_family_head_deceased": "family",
+    "is_family_lost_breadwinner": "family",
+    "family": "family",
+    "is_full_time_education": "work_type",
+    "is_full_time_program": "work_type",
+    "is_full_time_scholar": "work_type",
+    "is_part_time_instructor": "work_type",
+    "work_type": "work_type",
+    "is_goan_artist": "goan",
+    "is_goan_by_birth": "goan",
+    "is_goan_diaspora_leadership": "goan",
+    "is_goan_institution": "goan",
+    "goan": "goan",
+    "is_indian_agency": "indian",
+    "is_indian_entity": "indian",
+    "is_indian_institution": "indian",
+    "is_indian_origin": "indian",
+    "indian": "indian",
+    "is_previous_dvp": "previous",
+    "is_previous_fellowship_completed": "previous",
+    "is_previous_project_participant": "previous",
+    "is_previous_unit_viable": "previous",
+    "previous": "previous",
+    "is_private_bus_operator": "private",
+    "is_private_educational_institution": "private",
+    "is_private_recognized_institution": "private",
+    "is_private_trust": "private",
+    "private": "private",
+    "is_undergoing_apprenticeship": "undergoing",
+    "is_undergoing_coaching": "undergoing",
+    "is_undergoing_lockout": "undergoing",
+    "is_undergoing_treatment": "undergoing",
+    "undergoing": "undergoing",
+    "is_attending_formal_education": "attending",
+    "is_attending_regular_classes": "attending",
+    "is_attending_training": "attending",
+    "attending": "attending",
+    "is_author": "author",
+    "is_author_or_writer": "author",
+    "is_author_writer": "author",
+    "author": "author",
+    "is_certified_by_spc": "certified",
+    "is_certified_mental_retardation": "certified",
+    "is_certified_startup": "certified",
+    "certified": "certified",
+    "is_currently_cultivating_spices": "currently",
+    "is_currently_cultivating_vegetables": "currently",
+    "is_currently_in_piti": "currently",
+    "currently": "currently",
+    "is_defaulter": "defaulter",
+    "is_defaulter_dsfdc_schemes": "defaulter",
+    "is_defaulter_with_society": "defaulter",
+    "defaulter": "defaulter",
+    "is_first_attempt_pass": "first",
+    "is_first_marriage": "first",
+    "is_first_marriage_benefit": "first",
+    "first": "first",
+    "is_holding_other_scholarship": "holding",
+    "is_holding_other_stipend": "holding",
+    "is_holding_power_fellowship": "holding",
+    "holding": "holding",
+    "is_institution": "institution",
+    "is_institution_or_company": "institution",
+    "is_institution_representative": "institution",
+    "institution": "institution",
+    "is_livestock_keeper": "livestock",
+    "is_livestock_owner": "livestock",
+    "is_livestock_rearer": "livestock",
+    "livestock": "livestock",
+    "is_msme": "msme",
+    "is_msme_or_startup": "msme",
+    "is_msme_unit": "msme",
+    "msme": "msme",
+    "is_promoted_by_arsrlm": "promoted",
+    "is_promoted_by_women": "promoted",
+    "is_promoted_without_passing": "promoted",
+    "promoted": "promoted",
+    "is_recognized": "recognized",
+    "is_recognized_artist": "recognized",
+    "is_recognized_institution": "recognized",
+    "recognized": "recognized",
+    "is_research_institute_researcher": "research",
+    "is_research_scholar": "research",
+    "is_research_scholar_law": "research",
+    "research": "research",
+    "is_retired": "retired",
+    "is_retired_inae_fellow": "retired",
+    "is_retired_journalist": "retired",
+    "retired": "retired",
+    "is_scholar_astrology": "scholar",
+    "is_scholar_vastu": "scholar",
+    "is_scholar_veda": "scholar",
+    "scholar": "scholar",
+    "is_service_enterprise": "service",
+    "is_service_medal_awardee": "service",
+    "is_service_msme": "service",
+    "service": "service",
+    "is_victim_of_csexploitation": "victim",
+    "is_victim_or_dependent": "victim",
+    "is_victim_trafficking": "victim",
+    "victim": "victim",
+    "is_voluntary_abandonment": "voluntary",
+    "is_voluntary_institution": "voluntary",
+    "is_voluntary_organization": "voluntary",
+    "voluntary": "voluntary",
+    "is_accredited": "accredited",
+    "is_accredited_journalist": "accredited",
+    "accredited": "accredited",
+    "is_active_member": "membership",
+    "is_ayush_teaching_institute_registered_under_imcc_act_1970_or_hcc_act_1973": "membership",
+    "membership": "membership",
+    "is_agriculture_connection_holder": "agriculture",
+    "is_agriculture_related_firm": "agriculture",
+    "agriculture": "agriculture",
+    "is_already_incentivized": "already",
+    "is_already_trained": "already",
+    "already": "already",
+    "is_associated_artisan": "associated",
+    "is_associated_business_owner": "associated",
+    "associated": "associated",
+    "is_continuing_education": "continuing",
+    "is_continuing_studies": "continuing",
+    "continuing": "continuing",
+    "is_credit_defaulter": "credit",
+    "is_credit_defaulter_entity": "credit",
+    "credit": "credit",
+    "is_cured_leprosy": "cured",
+    "is_cured_silicosis": "cured",
+    "cured": "cured",
+    "is_death_event": "death",
+    "is_death_while_working": "death",
+    "death": "death",
+    "is_destitute": "destitute",
+    "is_destitute_or_homeless": "destitute",
+    "destitute": "destitute",
+    "is_direct_exporter": "direct",
+    "is_direct_implementer": "direct",
+    "direct": "direct",
+    "is_dowry_free_marriage": "dowry",
+    "is_dowry_victim": "dowry",
+    "dowry": "dowry",
+    "is_dpiit_recognized": "dpiit",
+    "is_dpiit_recognized_startup": "dpiit",
+    "dpiit": "dpiit",
+    "is_dropout": "dropout",
+    "is_dropout_from_anc": "dropout",
+    "dropout": "dropout",
+    "is_from_ner": "from",
+    "is_from_uttarakhand": "from",
+    "from": "from",
+    "is_general_public": "general",
+    "is_general_public_applicant": "general",
+    "general": "general",
+    "is_handloom_khadi_weaver": "handloom",
+    "is_handloom_weaver": "handloom",
+    "handloom": "handloom",
+    "is_hearing_challenged": "hearing",
+    "is_hearing_impaired": "hearing",
+    "hearing": "hearing",
+    "is_hiv_infected": "hiv",
+    "is_hiv_positive": "hiv",
+    "hiv": "hiv",
+    "is_independent": "independent",
+    "is_independent_legal_entity": "independent",
+    "independent": "independent",
+    "is_indigent": "indigent",
+    "is_indigent_artist": "indigent",
+    "indigent": "indigent",
+    "is_industry_or_association": "industry",
+    "is_industry_responsive": "industry",
+    "industry": "industry",
+    "is_international_olympiad_medallist": "international",
+    "is_international_visitor": "international",
+    "international": "international",
+    "is_involved_in_agriculture": "involved",
+    "is_involved_in_misconduct": "involved",
+    "involved": "involved",
+    "is_it_industry": "it",
+    "is_it_savvy": "it",
+    "it": "it",
+    "is_journalist": "journalist",
+    "is_journalist_or_dependent": "journalist",
+    "journalist": "journalist",
+    "is_khadi_artisan": "khadi",
+    "is_khadi_institution": "khadi",
+    "khadi": "khadi",
+    "is_lactating_mother": "pregnancy_status",
+    "is_pregnant": "pregnancy_status",
+    "pregnancy_status": "pregnancy_status",
+    "is_legal_entity": "legal",
+    "is_legal_heir": "legal",
+    "legal": "legal",
+    "is_listed_by_spc": "listed",
+    "is_listed_in_survey": "listed",
+    "listed": "listed",
+    "is_local_body": "local",
+    "is_local_startup": "local",
+    "local": "local",
+    "is_located_in_goa": "located",
+    "is_located_in_gujarat": "located",
+    "located": "located",
+    "is_mass_marriage_event": "mass",
+    "is_mass_marriage_required": "mass",
+    "mass": "mass",
+    "is_mega_industry": "mega",
+    "is_mega_project_disqualifier": "mega",
+    "mega": "mega",
+    "is_mp_native": "mp",
+    "is_mp_or_mla": "mp",
+    "mp": "mp",
+    "is_ngo": "ngo",
+    "is_ngo_representative": "ngo",
+    "ngo": "ngo",
+    "is_one_partner_transgender": "gender",
+    "is_transgender": "gender",
+    "gender": "gender",
+    "is_only_earner_deceased": "only",
+    "is_only_family_applicant": "only",
+    "only": "only",
+    "is_original_creation": "original",
+    "is_original_work": "original",
+    "original": "original",
+    "is_physically_fit": "physically",
+    "is_physically_medically_fit": "physically",
+    "physically": "physically",
+    "is_political_organization": "political",
+    "is_political_pressure_group": "political",
+    "political": "political",
+    "is_poor": "poor",
+    "is_poor_and_destitute": "poor",
+    "poor": "poor",
+    "is_posthumous_application": "posthumous",
+    "is_posthumous_award": "posthumous",
+    "posthumous": "posthumous",
+    "is_primary_breadwinner": "primary",
+    "is_primary_breadwinner_deceased": "primary",
+    "primary": "primary",
+    "is_public_sector_undertaking": "public",
+    "is_public_trust": "public",
+    "public": "public",
+    "is_repeating_class": "repeating",
+    "is_repeating_same_stage": "repeating",
+    "repeating": "repeating",
+    "is_scientist": "scientist",
+    "is_scientist_or_researcher": "scientist",
+    "scientist": "scientist",
+    "is_second_marriage": "second",
+    "is_second_time_recipient": "second",
+    "second": "second",
+    "is_small_tea_grower": "small",
+    "is_small_trader": "small",
+    "small": "small",
+    "is_suffering_from_eunuchism": "suffering",
+    "is_suffering_from_silicosis": "suffering",
+    "suffering": "suffering",
+    "is_sugar_cooperative_society": "sugar",
+    "is_sugar_industry": "sugar",
+    "sugar": "sugar",
+    "is_tea_garden_owner": "tea",
+    "is_tea_plantation": "tea",
+    "tea": "tea",
+    "is_teacher": "teacher",
+    "is_teacher_including_contractual": "teacher",
+    "teacher": "teacher",
+    "is_under_disciplinary_action": "under",
+    "is_under_revival_plan": "under",
+    "under": "under",
+    "is_working_in_establishment": "working",
+    "is_working_journalist": "working",
+    "working": "working",
+    "is_writer": "writer",
+    "is_writer_author": "writer",
+    "writer": "writer",
+    "is_youth": "youth",
+    "is_youth_preference": "youth",
+    "youth": "youth",
+    "is_active_fisherman": "fisherman",
+    "fisherman": "fisherman",
+    "is_agricultural_land": "land_ownership",
+    "land_ownership": "land_ownership",
+    "is_all_india_services_officer_or_pensioner": "pensioner",
+    "pensioner": "pensioner",
+    "is_child_in_govt_orphanage": "orphan",
+    "orphan": "orphan",
+    "is_in_tribal_area": "tribal",
+    "tribal": "tribal",
+    "is_newspaper_hawker": "ews",
+    "ews": "ews",
+    "age": "age",
+    "category": "category",
+    "caste_category": "category",
+    "state": "state",
+    "residence_state": "state",
+    "domicile_state": "state",
+    "annual_income": "annual_income",
+    "family_income": "annual_income",
+    "annual_family_income": "annual_income",
+    "residence": "residence",
+    "residence_area_type": "residence",
+    "residence_status": "residence",
+    "education_level": "education_level",
+    "current_class": "education_level",
+    "course_level": "education_level",
+    "occupation": "occupation",
+    "occupation_type": "occupation",
+    "employment_status": "occupation",
+    "marital_status": "marital_status",
+    "has_aadhaar": "has_aadhaar",
+    "has_aadhaar_card": "has_aadhaar",
+    "has_bank_account": "has_bank_account",
+    "has_savings_bank_account": "has_bank_account",
+    "is_disabled": "is_disabled",
+    "is_nri": "citizenship",
+    "is_citizen": "citizenship",
+    "is_indian_citizen": "citizenship",
+    "is_citizen_of_india": "citizenship",
+    "has_goat_farming_license": "goat_farming",
+    "goat_farming": "goat_farming",
+    "has_poultry_farm": "poultry_ownership",
+    "poultry_ownership": "poultry_ownership",
+    "is_rural_entrepreneur": "rural_entrepreneur",
+    "rural_entrepreneur": "rural_entrepreneur",
+    "owns_cattle_herd": "cattle_herd",
+    "cattle_herd": "cattle_herd",
+    "is_student": "education",
+    "is_employed": "employment",
+    "bank_account": "has_bank_account",
+    "income": "annual_income",
+    "is_rural": "residence",
+    "is_urban": "residence",
+    "is_fisherman": "fisherman",
+    "is_self_employed": "employment",
+    "residence_type": "residence",
+    "monthly_income": "annual_income",
+    "is_lactating": "pregnancy_status",
+    "is_disabled_child": "is_disabled",
+    "disability_type": "is_disabled",
+    "caste": "category",
+    "religion": "category",
+    "is_farmer": "farmer",
+    "is_minority": "minority",
+    "is_bpl": "bpl",
+    "is_widow": "widow",
+    "has_aadhar": "aadhaar",
+    "age_min": "age",
+    "age_max": "age",
+    "income_min": "annual_income",
+    "income_max": "annual_income",
+    "annual_income_min": "annual_income",
+    "annual_income_max": "annual_income",
+    "family_income_min": "annual_income",
+    "family_income_max": "annual_income",
+    "monthly_income_min": "annual_income",
+    "monthly_income_max": "annual_income",
+    "citizenship": "citizenship",
+    "is_minor": "other",
+    "has_existing_standard_savings_account": "bank_account",
+    "age_min_for_overdraft": "other",
+    "age_max_for_overdraft": "other",
+    "has_full_kyc_standard_account": "bank_account",
+    "has_satisfactory_account_operation_for_overdraft": "bank_account",
+    "has_minimum_transactions_and_kyc_adherence": "other",
+    "household_count_for_overdraft": "other",
+    "has_bank_account_for_credit": "bank_account",
+    "is_eligible_for_insurance": "other",
+    "is_resident": "citizenship",
+    "residency_status": "citizenship",
+    "is_indian_national": "citizenship",
+    "annual_family_income_max": "annual_income",
+    "family_annual_income": "annual_income",
+    "household_income": "annual_income",
+    "location_state": "state",
+    "residence_state": "state",
+    "domicile_state": "state",
+    "is_student": "student_status",
+    "is_farmer": "farmer",
+    "is_industrial_worker": "industrial_worker",
+    "is_tribal": "is_tribal",
+    "is_landless": "is_landless",
+    "is_orphan": "is_orphan",
+    "is_pensioner": "is_pensioner",
+    "disability_percentage": "disability",
+    "is_widow": "is_widow",
+    "is_bocw_registered": "is_bocw_registered",
+    "is_school_dropout": "is_school_dropout",
+    "is_first_gen_student": "is_first_gen_student",
+    "has_ration_card": "has_ration_card",
+    "is_senior_citizen": "is_senior_citizen",
+    "has_pucca_house": "has_pucca_house",
+    "domicile_status": "domicile_status",
+    "district": "district",
+    "block_taluk": "block_taluk",
+    "child_age": "child_age",
+    "is_head_of_family": "is_head_of_family",
+    "income_certificate_available": "has_income_certificate",
+    "ration_card_type": "ration_card_type",
+    "own_agricultural_land": "has_land",
+    "land_size_acres": "land_size",
+    "land_type": "land_type",
+    "career_goal": "career_goal",
+    "education_milestones": "education",
+    "scheme_previously_availed": "previous_beneficiary",
+    "willing_to_submit_docs": "has_willingness",
+    "documents_available": "has_documents",
+    "mobile_linked_bank": "has_mobile_linked_bank",
+    "sub_caste": "sub_caste",
+    "house_type": "house_type",
+    "income_slab": "income",
+    "ews_status": "is_ews",
+    "minority_status": "is_minority",
+    "is_abandoned_woman": "is_abandoned_woman",
+    "is_single_woman": "is_single_woman",
+    "is_acid_attack_survivor": "is_acid_attack_survivor",
+    "is_migrant_worker": "is_migrant_worker",
+    "is_ex_serviceman_or_dependent": "is_ex_serviceman_or_dependent",
+    "is_shg_member": "is_shg_member",
+    "is_freedom_fighter_or_dependent": "is_freedom_fighter_or_dependent",
+    "has_critical_illness": "has_critical_illness",
+    "is_pregnant": "is_pregnant",
+    "is_lactating_mother": "is_lactating_mother",
+    "social_category": "category",
+    "is_govt_employee": "govt_employee",
+    "achievement_certificates": "achievement",
+    "family_type": "family_type",
+    "total_family_members": "family_size",
+    "mother_occupation": "occupation",
+    "father_occupation": "occupation",
+    "is_tenant_farmer": "is_tenant_farmer",
+    "institution_type": "institution_type",
+    "highest_education_level": "education_level",
+    "current_course": "education",
+    "education_status": "education_status",
+    "employment_status": "employment_status",
+    "occupation_type": "occupation",
+    "aadhaar_linked_bank": "has_aadhaar_linked_bank",
+    "mobile": "mobile",
+    "dob": "dob",
+    "name": "name",
+    "email": "email"
+  },
+  "summary": {
+    "total_fields": 720,
+    "total_concepts": 115,
+    "validation_passed": true
+  }
+}

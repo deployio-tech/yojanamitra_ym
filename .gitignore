@@ -30,6 +30,17 @@ instance/
 *.pdf
 *.mp4
 
+# Media (Aggressive)
+*.mp4
+*.pdf
+static/ymad.mp4
+static/frames/
+static/img/scene*.png
+static/img/fire.png
+static/img/hero.png
+static/img/login.png
+static/img/register.png
+
 # Static/Uploads (Private user documents)
 static/uploads/
 static/uploads/documents/

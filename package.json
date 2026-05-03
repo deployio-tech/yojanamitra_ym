@@ -1,0 +1,41 @@
+{
+  "name": "yojana-mitra",
+  "version": "2.0.0",
+  "description": "YojanaMitra - Government Scheme Discovery Platform",
+  "main": "app.py",
+  "scripts": {
+    "start": "remotion preview remotion_root_enhanced.tsx",
+    "render": "remotion render remotion_root_enhanced.tsx YojanaMitraPremium output.mp4",
+    "render:portrait": "remotion render remotion_root_enhanced.tsx YojanaMitraPremium-Portrait output-mobile.mp4",
+    "render:square": "remotion render remotion_root_enhanced.tsx YojanaMitraPremium-Square output-square.mp4",
+    "render:4k": "remotion render remotion_root_enhanced.tsx YojanaMitraPremium --width=3840 --height=2160 output-4k.mp4",
+    "test": "echo 'Run: python -m pytest tests/ -v' && python -m pytest tests/ -v --tb=short || true",
+    "test:watch": "echo 'Run: ptw tests/' && ptw tests/ || true",
+    "test:coverage": "echo 'Run: pytest --cov' && python -m pytest tests/ --cov=. --cov-report=html || true",
+    "test:testsprite": "npx @testsprite/testsprite-mcp@latest --config testsprite.config.json",
+    "lint": "eslint '**/*.{jsx,tsx}' --fix",
+    "format": "prettier --write '**/*.{json,jsx,tsx,md}'"
+  },
+  "dependencies": {
+    "framer-motion": "^12.38.0",
+    "gsap": "^3.14.2",
+    "motion": "^12.38.0",
+    "ogl": "^1.0.11",
+    "remotion": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@testsprite/testsprite-mcp": "latest",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "typescript": "^5.0.0",
+    "ffmpeg-static": "^5.0.0",
+    "eslint": "^8.40.0",
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

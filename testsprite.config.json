@@ -1,0 +1,81 @@
+{
+  "projects": [
+    {
+      "name": "YojanaMitra - Backend API",
+      "path": "./app",
+      "type": "python-flask",
+      "testPaths": [
+        "tests/",
+        "test_*.py"
+      ],
+      "ignore": [
+        "node_modules/",
+        "__pycache__/",
+        ".git/",
+        "venv/",
+        ".env"
+      ]
+    },
+    {
+      "name": "YojanaMitra - Video Components",
+      "path": "./",
+      "type": "react-typescript",
+      "testPaths": [
+        "**/*.test.tsx",
+        "**/*.spec.tsx"
+      ],
+      "sourceFiles": [
+        "yojana_*.tsx",
+        "yojana_*.jsx",
+        "remotion_*.tsx",
+        "ADVANCED_CUSTOMIZATION_EXAMPLES.tsx"
+      ],
+      "ignore": [
+        "node_modules/",
+        ".git/"
+      ]
+    }
+  ],
+  "testGeneration": {
+    "enabled": true,
+    "strategy": "comprehensive",
+    "coverage": {
+      "minimum": 60,
+      "target": 80,
+      "branches": true,
+      "functions": true,
+      "lines": true
+    },
+    "focus": [
+      "eligibility-engine",
+      "condition-matching",
+      "scheme-filtering",
+      "animation-components",
+      "api-endpoints"
+    ]
+  },
+  "reporting": {
+    "format": ["json", "html", "junit"],
+    "outputDir": "./test-results",
+    "failOnErrors": true,
+    "htmlReport": true
+  },
+  "parallel": {
+    "enabled": true,
+    "workers": 4,
+    "timeout": 30000
+  },
+  "environment": {
+    "NODE_ENV": "test",
+    "PYTHONPATH": "."
+  },
+  "hooks": {
+    "beforeAll": [
+      "npm install",
+      "pip install -r requirements.txt"
+    ],
+    "afterAll": [
+      "npm run lint"
+    ]
+  }
+}
