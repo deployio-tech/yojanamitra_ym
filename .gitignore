@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv
+ENV/
+node_modules/
+
+# Database
+*.db
+*.sqlite3
+instance/
+
+# Data and Exports (Aggressive)
+*.json
+!package.json
+!package-lock.json
+!testsprite.config.json
+!mcp.json
+!concept_registry.json
+*.txt
+*.log
+*.csv
+*.xlsx
+*.ipynb
+*.pdf
+*.mp4
+
+# Static/Uploads (Private user documents)
+static/uploads/
+static/uploads/documents/
+
+# Temp/Cache
+.gemini/
+.tempmediaStorage/
+.pytest_cache/
+.vscode/
+.idea/
+
+# Scratch scripts & one-offs
+scratch/
+test_*.py
+*test*.py
+debug_*.py
+verify_*.py
+audit_*.py
+extract_*.py
+check_*.py
+diag_*.py
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Helper</title>
+    <style>
+        :root {
+            --bg: #0c0a1c;
+            --card: #16142c;
+            --accent: #8b5cf6;
+            --text: #ffffff;
+            --muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        html, body {
+            background: transparent !important;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Compact Mode Pill */
+        #compact-mode {
+            width: 60px;
+            height: 60px;
+            background: var(--bg);
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+            transition: transform 0.2s;
+            -webkit-app-region: drag;
+        }
+
+        #compact-mode:hover {
+            transform: scale(1.05);
+        }
+
+        /* Expanded Mode Window */
+        #expanded-mode {
+            width: 340px;
+            height: 500px;
+            background: var(--bg);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 20px;
+            display: none;
+            flex-direction: column;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            padding: 18px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            -webkit-app-region: drag;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-circle {
+            width: 28px !important;
+            height: 28px !important;
+            background: #000 !important;
+            border: 1px solid rgba(255,255,255,0.1) !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 10px !important;
+            font-weight: 900 !important;
+            color: #fff !important;
+        }
+
+        .title {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+        }
+
+        .close-btn {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            -webkit-app-region: no-drag;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+        }
+
+        .content::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .content::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .footer {
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .copy-all-btn {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .copy-all-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent);
+        }
+
+        .info-msg {
+            text-align: center;
+            color: var(--muted);
+            font-size: 12px;
+            margin-bottom: 12px;
+            padding-top: 10px;
+        }
+
+        .field-label {
+            font-size: 11px;
+            color: var(--muted);
+            margin-bottom: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .field-value {
+            font-size: 13px;
+            color: #fff;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div id="compact-mode" title="Click to Expand">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" />
+            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+        </svg>
+    </div>
+
+    <div id="expanded-mode">
+        <div class="header">
+            <div class="logo-area">
+                <div class="logo-circle">YM</div>
+                <div class="title">Portal Auto-Fill Helper</div>
+            </div>
+            <div class="close-btn" id="close-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                    <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
+            </div>
+        </div>
+        <div class="info-msg">Click any field to copy instantly</div>
+        <div class="content" id="fields-container">
+            <div style="color:var(--muted);text-align:center;margin-top:40px;font-size:13px;">
+                Waiting for data...<br>
+                <span style="font-size:11px;opacity:0.7;">Click "Launch Portal Helper" on your dashboard.</span>
+            </div>
+        </div>
+        <div class="footer">
+            <button class="copy-all-btn" id="copy-all-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <rect x="9" y="9" width="13" height="13" rx="2" />
+                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                </svg>
+                Copy All Profile Data
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        const compactEl = document.getElementById('compact-mode');
+        const expandedEl = document.getElementById('expanded-mode');
+        const closeBtn = document.getElementById('close-btn');
+        const fieldsContainer = document.getElementById('fields-container');
+        const copyAllBtn = document.getElementById('copy-all-btn');
+
+        let profileData = {};
+
+        // Toggle Modes
+        compactEl.addEventListener('click', () => {
+            ipcRenderer.send('resize-window', 'expanded');
+            compactEl.style.display = 'none';
+            expandedEl.style.display = 'flex';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            ipcRenderer.send('hide-window');
+        });
+
+        // Listen for data pushed from the web dashboard
+        ipcRenderer.on('profile-data', (event, data) => {
+            console.log("Received profile data push:", data);
+            profileData = data || {};
+            renderFields();
+        });
+
+        // Listen for force-expanded (when dashboard pings /launch)
+        ipcRenderer.on('force-expanded', () => {
+            ipcRenderer.send('resize-window', 'expanded');
+            compactEl.style.display = 'none';
+            expandedEl.style.display = 'flex';
+        });
+
+        function renderFields() {
+            let html = '';
+            for (const [label, value] of Object.entries(profileData)) {
+                if (!value || !String(value).trim() || value === 'null') continue;
+                const safeKey = label.replace(/[^a-zA-Z0-9]/g, '_');
+                html += `
+                    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:12px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:background 0.2s;" onclick="copyText('${safeKey}', '${String(value).replace(/'/g, "\\'")}')" class="ph-field-row" id="row-${safeKey}">
+                        <div>
+                            <div class="field-label">${label}</div>
+                            <div class="field-value" id="val-${safeKey}">${value}</div>
+                        </div>
+                        <div id="copy-status-${safeKey}" style="color:#8b5cf6;font-size:11px;font-weight:700;opacity:0;transition:opacity 0.2s;">COPIED</div>
+                    </div>
+                `;
+            }
+            fieldsContainer.innerHTML = html || '<div style="color:var(--muted);text-align:center;margin-top:20px;">No profile fields available.</div>';
+        }
+
+        window.copyText = function(safeKey, value) {
+            navigator.clipboard.writeText(value).then(() => {
+                const status = document.getElementById('copy-status-' + safeKey);
+                if (status) {
+                    status.style.opacity = '1';
+                    setTimeout(() => status.style.opacity = '0', 1500);
+                }
+            });
+        };
+
+        copyAllBtn.addEventListener('click', () => {
+            let allText = '';
+            for (const [key, value] of Object.entries(profileData)) {
+                allText += `${key}: ${value}\n`;
+            }
+            navigator.clipboard.writeText(allText).then(() => {
+                const originalText = copyAllBtn.innerHTML;
+                copyAllBtn.innerHTML = '✓ All Data Copied';
+                setTimeout(() => copyAllBtn.innerHTML = originalText, 2000);
+            });
+        });
+    </script>
+</body>
+</html>

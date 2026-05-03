@@ -1,0 +1,497 @@
+<!--
+=============================================================
+QUESTIONS FORM COMPONENT
+=============================================================
+Integrated into "Possibly Eligible" tab to ask users
+questions about unmapped fields and refine scheme matching.
+
+Shows up to 40 dynamically selected questions with:
+- Multiple choice/radio buttons
+- Checkboxes for multi-select
+- Number inputs
+- Progress tracking
+- Real-time scheme updates
+=============================================================
+-->
+
+<!-- Questions Form Container (shown in Possibly Eligible tab) -->
+<div id="questions-form-container" style="display:none; margin-bottom:32px;">
+  
+  <!-- Header Section -->
+  <div style="background:linear-gradient(135deg, #5560f5 0%, #3d47d4 100%); 
+              color:white; padding:24px; border-radius:12px; margin-bottom:24px;">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <div>
+        <h3 style="margin:0 0 8px 0; font-size:18px; font-weight:700;">
+          <i class="fa-solid fa-circle-question"></i> Answer a Few Questions
+        </h3>
+        <p style="margin:0; font-size:13px; opacity:0.95;">
+          Help us find more relevant schemes by answering quick questions
+        </p>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:24px; font-weight:800; line-height:1;">
+          <span id="questions-answered">0</span>/<span id="questions-total">0</span>
+        </div>
+        <div style="font-size:11px; opacity:0.9;">Answered</div>
+      </div>
+    </div>
+    
+    <!-- Progress Bar -->
+    <div style="background:rgba(255,255,255,0.2); height:4px; border-radius:2px; margin-top:12px; overflow:hidden;">
+      <div id="questions-progress-bar" style="background:white; height:100%; width:0%; transition:width 0.3s ease;"></div>
+    </div>
+  </div>
+
+  <!-- Questions List -->
+  <div id="questions-list" style="display:grid; grid-template-columns:1fr; gap:20px;">
+    <!-- Questions will be rendered here -->
+  </div>
+
+  <!-- Info Message -->
+  <div id="questions-no-data" style="display:none; text-align:center; padding:40px; color:#6b7280;">
+    <i class="fa-solid fa-inbox" style="font-size:32px; margin-bottom:12px; display:block; opacity:0.5;"></i>
+    <p style="margin:0; font-size:14px; font-weight:500;">All questions have been answered!</p>
+    <p style="margin:8px 0 0 0; font-size:13px; opacity:0.7;">Answer more to refine your results</p>
+  </div>
+
+  <!-- Action Buttons -->
+  <div style="display:flex; gap:12px; margin-top:24px; justify-content:flex-end;">
+    <button id="questions-skip-btn" onclick="skipRemainingQuestions()" 
+            style="padding:10px 20px; border:1px solid #e5e7eb; background:white; 
+                   border-radius:8px; font-size:13px; font-weight:600; cursor:pointer;
+                   color:#374151; transition:all 0.2s;">
+      Skip for Now
+    </button>
+    <button id="questions-submit-btn" onclick="submitAllAnswers()" 
+            style="padding:10px 24px; background:#5560f5; color:white; 
+                   border:none; border-radius:8px; font-size:13px; font-weight:600; 
+                   cursor:pointer; transition:all 0.2s;"
+            disabled>
+      Update Results
+    </button>
+  </div>
+
+  <!-- Answer Storage (hidden) -->
+  <div id="answers-storage" style="display:none;"></div>
+</div>
+
+<script>
+/**
+ * QUESTIONS FORM SYSTEM
+ * =====================
+ * Handles fetching, displaying, and submitting questions
+ */
+
+let cachedQuestions = [];
+let userAnswers = {};
+let answerChangeListeners = {};
+
+async function initializeQuestionsForm() {
+  console.log("⚙️ Initializing questions form...");
+  await fetchAndDisplayQuestions();
+}
+
+/**
+ * Fetch questions from backend
+ */
+async function fetchAndDisplayQuestions() {
+  try {
+    const container = document.getElementById('questions-form-container');
+    const listDiv = document.getElementById('questions-list');
+    
+    // First, get user profile (includes missing fields)
+    const userRes = await fetch('/api/user');
+    if (!userRes.ok) throw new Error('Failed to fetch user');
+    
+    const userData = await userRes.json();
+    console.log("📋 User data:", userData);
+    
+    // Get current user's answers (if any)
+    userAnswers = userData.question_answers || {};
+    
+    // Get recommendations - includes list of schemes with missing fields
+    const recRes = await fetch('/api/recommendations');
+    if (!recRes.ok) {
+      container.style.display = 'none';
+      return;
+    }
+    
+    const recData = await recRes.json();
+    console.log("📊 Recommendations data:", recData);
+    
+    // Recommendations endpoint should include missing_questions field
+    // or we need to analyze missing fields from schemes
+    if (!recData.missing_questions || recData.missing_questions.length === 0) {
+      document.getElementById('questions-no-data').style.display = 'block';
+      document.getElementById('questions-list').style.display = 'none';
+      return;
+    }
+    
+    cachedQuestions = recData.missing_questions;
+    console.log(`Found ${cachedQuestions.length} unanswered questions`);
+    
+    // Render questions
+    renderQuestionsInForm(cachedQuestions, userAnswers);
+    
+    // Show container
+    container.style.display = 'block';
+    
+  } catch (error) {
+    console.error("❌ Error loading questions:", error);
+    document.getElementById('questions-form-container').style.display = 'none';
+  }
+}
+
+/**
+ * Render questions in the form
+ */
+function renderQuestionsInForm(questions, existingAnswers) {
+  const listDiv = document.getElementById('questions-list');
+  const totalSpan = document.getElementById('questions-total');
+  const answeredSpan = document.getElementById('questions-answered');
+  
+  listDiv.innerHTML = '';
+  
+  // Update counts
+  totalSpan.textContent = questions.length;
+  answeredSpan.textContent = Object.keys(existingAnswers).length;
+  updateProgressBar();
+  
+  if (questions.length === 0) {
+    document.getElementById('questions-no-data').style.display = 'block';
+    document.getElementById('questions-list').style.display = 'none';
+    return;
+  }
+  
+  document.getElementById('questions-no-data').style.display = 'none';
+  document.getElementById('questions-list').style.display = 'grid';
+  
+  // Render each question
+  questions.forEach((q, idx) => {
+    const card = createQuestionCard(q, idx, existingAnswers[q.field]);
+    listDiv.appendChild(card);
+  });
+}
+
+/**
+ * Create individual question card
+ */
+function createQuestionCard(question, index, currentAnswer) {
+  const card = document.createElement('div');
+  card.id = `question-card-${question.field}`;
+  card.style.cssText = `
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:20px;
+    transition:all 0.2s;
+  `;
+  
+  let answersHTML = '';
+  
+  // Different question types
+  switch(question.field_type) {
+    case 'boolean':
+      answersHTML = createBooleanQuestion(question, currentAnswer);
+      break;
+    case 'number':
+      answersHTML = createNumberQuestion(question, currentAnswer);
+      break;
+    case 'select':
+    case 'single_choice':
+      answersHTML = createSingleChoiceQuestion(question, currentAnswer);
+      break;
+    case 'multi_select':
+      answersHTML = createMultiSelectQuestion(question, currentAnswer);
+      break;
+    default:
+      answersHTML = createTextQuestion(question, currentAnswer);
+  }
+  
+  card.innerHTML = `
+    <div style="margin-bottom:16px;">
+      <label style="display:block; font-size:14px; font-weight:600; color:#111827; margin-bottom:12px;">
+        ${index + 1}. ${escapeHtml(question.text)}
+      </label>
+      ${answersHTML}
+    </div>
+    <div style="font-size:12px; color:#9ca3af; margin-top:12px;">
+      Affects ${question.schemes_affected?.length || 0} schemes
+    </div>
+  `;
+  
+  return card;
+}
+
+/**
+ * Boolean question (Yes/No)
+ */
+function createBooleanQuestion(question, currentAnswer) {
+  return `
+    <div style="display:flex; gap:12px;">
+      <label style="display:flex; align-items:center; gap:8px; cursor:pointer; 
+                    padding:8px 12px; border:1px solid #e5e7eb; border-radius:8px;
+                    background:${currentAnswer === true ? '#eff4ff' : '#f9fafb'};
+                    border-color:${currentAnswer === true ? '#1a56db' : '#e5e7eb'};
+                    flex:1;">
+        <input type="radio" name="question-${question.field}" value="true" 
+               ${currentAnswer === true ? 'checked' : ''} 
+               onchange="recordAnswer('${question.field}', true)">
+        <span style="color:${currentAnswer === true ? '#1a56db' : '#111827'}; font-weight:500;">Yes</span>
+      </label>
+      <label style="display:flex; align-items:center; gap:8px; cursor:pointer; 
+                    padding:8px 12px; border:1px solid #e5e7eb; border-radius:8px;
+                    background:${currentAnswer === false ? '#fef0f0' : '#f9fafb'};
+                    border-color:${currentAnswer === false ? '#c42626' : '#e5e7eb'};
+                    flex:1;">
+        <input type="radio" name="question-${question.field}" value="false" 
+               ${currentAnswer === false ? 'checked' : ''} 
+               onchange="recordAnswer('${question.field}', false)">
+        <span style="color:${currentAnswer === false ? '#c42626' : '#111827'}; font-weight:500;">No</span>
+      </label>
+    </div>
+  `;
+}
+
+/**
+ * Number question
+ */
+function createNumberQuestion(question, currentAnswer) {
+  return `
+    <input type="number" id="input-${question.field}" value="${currentAnswer || ''}"
+           placeholder="Enter a number..."
+           onchange="recordAnswer('${question.field}', this.value)"
+           style="width:100%; padding:10px 12px; border:1px solid #e5e7eb; 
+                  border-radius:8px; font-size:14px;">
+  `;
+}
+
+/**
+ * Single choice (radio buttons/dropdown)
+ */
+function createSingleChoiceQuestion(question, currentAnswer) {
+  if (!question.options || question.options.length === 0) {
+    return createTextQuestion(question, currentAnswer);
+  }
+  
+  return `
+    <div style="display:grid; gap:8px;">
+      ${question.options.map(opt => `
+        <label style="display:flex; align-items:center; gap:8px; cursor:pointer; 
+                      padding:8px 12px; border:1px solid #e5e7eb; border-radius:8px;
+                      background:${currentAnswer === opt ? '#eff4ff' : '#f9fafb'};
+                      border-color:${currentAnswer === opt ? '#1a56db' : '#e5e7eb'};">
+          <input type="radio" name="question-${question.field}" value="${opt}" 
+                 ${currentAnswer === opt ? 'checked' : ''} 
+                 onchange="recordAnswer('${question.field}', '${opt}')">
+          <span style="color:${currentAnswer === opt ? '#1a56db' : '#111827'}; font-weight:500;">
+            ${escapeHtml(opt)}
+          </span>
+        </label>
+      `).join('')}
+    </div>
+  `;
+}
+
+/**
+ * Multi-select (checkboxes)
+ */
+function createMultiSelectQuestion(question, currentAnswer) {
+  if (!question.options || question.options.length === 0) {
+    return createTextQuestion(question, currentAnswer);
+  }
+  
+  const selectedArr = Array.isArray(currentAnswer) ? currentAnswer : [];
+  
+  return `
+    <div style="display:grid; gap:8px;">
+      ${question.options.map(opt => `
+        <label style="display:flex; align-items:center; gap:8px; cursor:pointer; 
+                      padding:8px 12px; border:1px solid #e5e7eb; border-radius:8px;
+                      background:${selectedArr.includes(opt) ? '#eff4ff' : '#f9fafb'};
+                      border-color:${selectedArr.includes(opt) ? '#1a56db' : '#e5e7eb'};">
+          <input type="checkbox" value="${opt}" 
+                 ${selectedArr.includes(opt) ? 'checked' : ''} 
+                 onchange="recordMultiAnswer('${question.field}', '${opt}', this.checked)">
+          <span style="color:${selectedArr.includes(opt) ? '#1a56db' : '#111827'}; font-weight:500;">
+            ${escapeHtml(opt)}
+          </span>
+        </label>
+      `).join('')}
+    </div>
+  `;
+}
+
+/**
+ * Text/free-form question
+ */
+function createTextQuestion(question, currentAnswer) {
+  return `
+    <input type="text" id="input-${question.field}" value="${currentAnswer || ''}"
+           placeholder="Enter your answer..."
+           onchange="recordAnswer('${question.field}', this.value)"
+           style="width:100%; padding:10px 12px; border:1px solid #e5e7eb; 
+                  border-radius:8px; font-size:14px;">
+  `;
+}
+
+/**
+ * Record single answer
+ */
+function recordAnswer(field, value) {
+  userAnswers[field] = value;
+  updateProgressBar();
+  triggerRecommendationRefresh(field, value);
+}
+
+/**
+ * Record multi-select answer
+ */
+function recordMultiAnswer(field, option, isChecked) {
+  if (!Array.isArray(userAnswers[field])) {
+    userAnswers[field] = [];
+  }
+  
+  if (isChecked) {
+    if (!userAnswers[field].includes(option)) {
+      userAnswers[field].push(option);
+    }
+  } else {
+    userAnswers[field] = userAnswers[field].filter(o => o !== option);
+  }
+  
+  updateProgressBar();
+  triggerRecommendationRefresh(field, userAnswers[field]);
+}
+
+/**
+ * Update progress bar
+ */
+function updateProgressBar() {
+  const total = cachedQuestions.length;
+  const answered = Object.keys(userAnswers).length;
+  const percentage = total > 0 ? (answered / total) * 100 : 0;
+  
+  document.getElementById('questions-progress-bar').style.width = percentage + '%';
+  document.getElementById('questions-answered').textContent = answered;
+  
+  // Enable submit button if any answers
+  const submitBtn = document.getElementById('questions-submit-btn');
+  submitBtn.disabled = answered === 0;
+}
+
+/**
+ * Auto-refresh recommendations after each answer
+ */
+let refreshTimeout;
+function triggerRecommendationRefresh(field, value) {
+  // Debounce to avoid too many requests
+  clearTimeout(refreshTimeout);
+  refreshTimeout = setTimeout(() => {
+    console.log(`Refreshing recommendations after answering: ${field}`);
+    // This will be called after user finishes answering
+    // Actual refresh happens when they click "Update Results"
+  }, 500);
+}
+
+/**
+ * Submit all answers
+ */
+async function submitAllAnswers() {
+  try {
+    const submitBtn = document.getElementById('questions-submit-btn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Updating...';
+    
+    // Submit each answer to backend
+    for (const [field, value] of Object.entries(userAnswers)) {
+      await fetch('/api/user/answer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ field_name: field, answer_value: value })
+      });
+    }
+    
+    // Refresh recommendations
+    await fetchAndRenderRecommendations();
+    
+    // Re-initialize questions form
+    await initializeQuestionsForm();
+    
+    submitBtn.textContent = 'Update Results';
+    submitBtn.disabled = false;
+    
+    // Show success message
+    showNotification('Results updated with your answers!', 'success');
+    
+  } catch (error) {
+    console.error("❌ Error submitting answers:", error);
+    showNotification('Error updating results. Please try again.', 'error');
+    document.getElementById('questions-submit-btn').disabled = false;
+    document.getElementById('questions-submit-btn').textContent = 'Update Results';
+  }
+}
+
+/**
+ * Skip remaining questions
+ */
+function skipRemainingQuestions() {
+  console.log("⊘ User skipped remaining questions");
+  document.getElementById('questions-form-container').style.display = 'none';
+}
+
+/**
+ * Utility: Escape HTML
+ */
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+/**
+ * Utility: Show notification
+ */
+function showNotification(message, type) {
+  const notif = document.createElement('div');
+  notif.style.cssText = `
+    position:fixed; top:20px; right:20px; z-index:9999;
+    background:${type === 'success' ? '#0a8a5e' : '#c42626'};
+    color:white; padding:14px 20px; border-radius:8px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    font-weight:500; font-size:14px;
+    animation:slideIn 0.3s ease;
+  `;
+  notif.textContent = message;
+  document.body.appendChild(notif);
+  
+  setTimeout(() => {
+    notif.style.opacity = '0';
+    notif.style.transition = 'opacity 0.3s ease';
+    setTimeout(() => notif.remove(), 300);
+  }, 3000);
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize after recommendations are loaded
+  if (document.readyState === 'complete') {
+    setTimeout(initializeQuestionsForm, 500);
+  }
+});
+
+// Also try to initialize when fetching recommendations
+const originalFetch = window.fetch;
+window.fetch = function(...args) {
+  const promise = originalFetch.apply(this, args);
+  
+  if (args[0]?.includes('/api/recommendations')) {
+    promise.then(() => {
+      setTimeout(initializeQuestionsForm, 300);
+    });
+  }
+  
+  return promise;
+};
+</script>
