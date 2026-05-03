@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>YojanaMitra — Login & Register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<style>
+/* ─────────────────────────────────────────────────────────────
+   GLOBAL & THEME
+───────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { height: 100%; scroll-behavior: smooth; }
+
+:root {
+  --white: #ffffff;
+  --bg-page: #ffffff;
+  --accent: #f97316;
+  --accent-dark: #ea580c;
+  --accent-light: #fff5e1;
+  --text-dark: #0b1a16;
+  --text-mid: #2d3a35;
+  --text-muted: #5a6a64;
+  --border: #a1b0a8;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --font: 'Plus Jakarta Sans', sans-serif;
+  --orange: #f97316;
+  --green: #2d6a4f;
+
+  /* Black Glassmorphic Header variables */
+  --n-bg: rgba(0, 0, 0, 0.85); /* Darker black glass */
+  --n-border: rgba(255, 255, 255, 0.15);
+  --n-text: #ffffff;
+  --n-link-hover: rgba(255, 255, 255, 0.1);
+  --n-pill: rgba(255, 255, 255, 0.05);
+  --n-logo-bg: #e36802; /* Marigold logo bg */
+  --n-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  font-family: var(--font);
+  background: url('img/login.png') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-dark);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1); /* Very light white tint if needed */
+  z-index: -2;
+}
+
+#bg-canvas {
+  display: none;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   HEADER (Premium Floating)
+───────────────────────────────────────────────────────────── */
+#global-header {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 95%;
+  height: 64px;
+  background: var(--n-bg) !important;
+  backdrop-filter: blur(32px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
+  border: 1px solid var(--n-border) !important;
+  border-radius: 40px !important;
+  padding: 0 12px 0 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  z-index: 1000 !important;
+  box-shadow: var(--n-shadow) !important;
+  transition: background 0.4s, border 0.4s, box-shadow 0.4s, top 0.4s;
+}
+
+#global-header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 0;
+  color: var(--n-text) !important;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+#global-header .logo-mark {
+  width: 32px;
+  height: 32px;
+  background: var(--n-logo-bg) !important;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+#global-header nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 0 !important;
+}
+
+#global-header nav a {
+  padding: 10px 18px;
+  border-radius: 30px;
+  color: var(--n-text) !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background: transparent;
+  opacity: 0.85;
+  text-decoration: none;
+}
+
+#global-header nav a:hover {
+  background: var(--n-link-hover) !important;
+  opacity: 1;
+}
+
+#global-header .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+
+#global-header .btn-login {
+  padding: 10px 22px;
+  border: none !important;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--n-text);
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+#global-header .btn-login:hover {
+  background: var(--n-link-hover);
+}
+
+#global-header .btn-dashboard {
+  background: #f97316 !important;
+  color: white !important;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+#global-header .btn-dashboard:hover {
+  background: #ea6a0a !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(249, 115, 22, 0.4);
+}
+
+#global-header .admin-link {
+  margin-right: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #f97316;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  text-decoration: none;
+}
+
+#global-header .admin-link:hover {
+  opacity: 1;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   MAIN LAYOUT
+───────────────────────────────────────────────────────────── */
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1250px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 15vh 40px 20px; /* Moved down by approximately 5% from previous state */
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Left Pane: Feature Showcase */
+.showcase {
+  max-width: 540px;
+  margin-top: 2vh; /* Reduced from 5vh */
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  background: var(--accent-light);
+  color: var(--accent);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+
+.showcase h1 {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+.showcase h1 span {
+  color: var(--accent);
+}
+
+.showcase p.sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.feature-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.f-card {
+  background: var(--white);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: 0.3s;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.04), 
+    0 2px 4px -1px rgba(0, 0, 0, 0.02),
+    0 10px 20px -5px rgba(0, 0, 0, 0.05); /* Subtle 3D shadow */
+  border-bottom: 2px solid rgba(0,0,0,0.02);
+}
+.f-card:hover { 
+  transform: translateY(-4px) scale(1.01); 
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.08), 
+    0 10px 10px -5px rgba(0, 0, 0, 0.03); 
+}
+
+.f-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background: #f1f5f9; /* Neutral background for black icons */
+  color: #000000; /* Logos set to black as requested */
+}
+
+.f-icon i { color: #000000; }
+
+.f-info h4 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.f-info p { font-size: 14px; color: var(--text-muted); line-height: 1.4; }
+
+/* Right Pane: Auth Card */
+.auth-column {
+  display: flex;
+  justify-content: center;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  height: 530px; /* Snugger height to eliminate empty space at the bottom */
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: none;
+  padding: 20px 28px 16px;
+  display: flex;
+  flex-direction: column;
+  /* Depth via high-end layered shadows instead of rotation to prevent text blurriness */
+  box-shadow: 
+    0 4px 6px rgba(0,0,0,0.02),
+    0 12px 24px rgba(0,0,0,0.03),
+    0 32px 64px rgba(0,0,0,0.04),
+    0 64px 128px rgba(0,0,0,0.05); 
+  border-bottom: 2px solid rgba(0,0,0,0.05);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#login-form, #register-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Force forms to fill the fixed card height */
+}
+
+#login-form form, #register-form form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start; /* Switch to natural stack to avoid forced stretching */
+  padding-bottom: 0;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  background: #eef2f6;
+  padding: 4px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.tab-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px;
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.tab-btn.active {
+  background: var(--white);
+  color: var(--text-dark);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.auth-card h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+  color: var(--text-dark);
+}
+
+.auth-card p.auth-sub {
+  color: #64748b;
+  font-size: 13px;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+/* Premium Input Styles */
+.form-group { margin-bottom: 11px; position: relative; }
+.form-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+}
+
+.input-icon-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon-wrap i:not(.toggle-pw) {
+  position: absolute;
+  left: 14px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.form-input {
+  width: 100%;
+  background: #ffffff !important; /* Pure white input box restored */
+  border: 1.5px solid #e2e8f0;
+  padding: 12px 14px 12px 40px; 
+  border-radius: 12px;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a !important; /* Dark text for white background */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.form-input:focus {
+  border-color: var(--accent);
+  background: #ffffff !important;
+  box-shadow: 0 0 0 4px var(--accent-light);
+  transform: translateY(-1px);
+}
+
+/* Clear, high-visibility gray placeholders for white inputs */
+.form-input::placeholder {
+  color: #94a3b8 !important;
+  opacity: 1 !important;
+  font-weight: 400;
+}
+
+/* Reset autofill for white theme */
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover, 
+.form-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #0f172a !important;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.toggle-pw {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 10;
+}
+
+.pw-strength {
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 2px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.pw-strength-bar {
+  height: 100%;
+  width: 0%;
+  transition: all 0.4s ease;
+}
+
+.pw-label {
+  display: block;
+  font-size: 11px;
+  margin-top: 6px;
+  font-weight: 700;
+  color: #64748b;
+}
+.toggle-pw:hover { color: var(--text-dark); }
+
+/* Buttons */
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 6px;
+  font-family: var(--font);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(85, 96, 245, 0.25);
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 12px;
+  background: var(--orange);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.25);
+}
+
+/* Google Button */
+/* Google Button */
+.google-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--white);
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  color: var(--text-dark);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 11px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.google-btn:hover { 
+  background: #f8fafc; 
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.google-btn img { width: 17px; }
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 11px 0;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1.5px solid #f1f5f9; }
+.divider:not(:empty)::before { margin-right: 15px; }
+.divider:not(:empty)::after { margin-left: 15px; }
+
+.footer-note {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+.footer-note a { color: var(--accent); text-decoration: none; font-weight: 700; }
+
+.alert {
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  display: none;
+}
+.alert-error { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+.alert-success { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+
+/* Strength meter */
+.pw-strength {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.pw-strength-bar { height: 100%; width: 0; transition: 0.3s; }
+.pw-label { font-size: 11px; margin-top: 6px; display: block; font-weight: 600; }
+
+[data-form="register"] { display: none; }
+
+/* ─────────────────────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  main { grid-template-columns: 1fr; gap: 60px; padding: 40px 30px; }
+  .showcase { text-align: center; margin: 0 auto; }
+  .auth-column { justify-content: center; }
+  header { padding: 20px 30px; }
+}
+
+@media (max-width: 640px) {
+  .showcase h1 { font-size: 36px; }
+  .auth-card { padding: 30px 20px; }
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<canvas id="bg-canvas"></canvas>
+
+<header id="global-header">
+  <a class="logo" href="index.html">
+    <div class="logo-mark">YM</div>
+    YojanaMitra
+  </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="all_schemes.html">All Schemes</a>
+    <a href="vault.html">My Vault</a>
+  </nav>
+
+  <div class="header-actions">
+    <a href="admin.html" class="admin-link" target="_blank">Admin</a>
+    <a href="auth.html#login" class="btn-login">Login</a>
+    <a href="dashboard.html" class="btn-dashboard">My Dashboard</a>
+  </div>
+</header>
+
+<main>
+  <!-- Left Column -->
+  <section class="showcase">
+    <div class="badge-pill">Trusted by 3M+ Citizens</div>
+    <h1>Your gateway to every <span>welfare scheme</span> you deserve.</h1>
+    <p class="sub">Create a free account and let our AI match you to thousands of government schemes — in under 5 minutes.</p>
+
+    <div class="feature-cards">
+      <div class="f-card">
+        <div class="f-icon blue"><i class="fas fa-check-circle"></i></div>
+        <div class="f-info">
+          <h4>AI Eligibility Audit</h4>
+          <p>Instant score out of 100 for any government scheme.</p>
+        </div>
+      </div>
+      <div class="f-card">
+        <div class="f-icon green"><i class="fas fa-shield-alt"></i></div>
+        <div class="f-info">
+          <h4>OCR Secure Vault</h4>
+          <p>Upload once — AI extracts all data from your documents.</p>
+        </div>
+      </div>
+      <div class="f-card">
+        <div class="f-icon orange"><i class="fas fa-chart-line"></i></div>
+        <div class="f-info">
+          <h4>Lifecycle Forecasting</h4>
+          <p>Discover future schemes based on your age & career.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Right Column -->
+  <section class="auth-column">
+    <div class="auth-card">
+      <div class="tabs">
+        <button class="tab-btn active" id="tab-login" onclick="switchTab('login')">Login</button>
+        <button class="tab-btn" id="tab-register" onclick="switchTab('register')">Register</button>
+      </div>
+
+      <div id="auth-alert" class="alert"></div>
+
+      <div id="login-header">
+        <h2>Welcome back</h2>
+        <p class="auth-sub">Login to access your matched schemes and vault.</p>
+      </div>
+      
+      <div id="register-header" style="display:none">
+        <h2>Join YojanaMitra</h2>
+        <p class="auth-sub">Create your account to unlock personalized benefits.</p>
+      </div>
+
+      <div id="login-section">
+        <!-- Google Login Prominence -->
+        <button class="google-btn" onclick="initiateGoogleLogin()">
+          <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="G">
+          Continue with Google
+        </button>
+
+        <div class="divider">or login with email</div>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login-form" data-form="login">
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <div class="input-icon-wrap">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="email" class="form-input" placeholder="Enter your email address" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px">
+            <label class="form-label" style="margin:0">Password</label>
+            <a href="#" style="font-size:12px; color:var(--accent); text-decoration:none; font-weight:700">Forgot password?</a>
+          </div>
+          <div class="input-icon-wrap">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="password" id="login-pw" class="form-input" placeholder="Enter your password" required />
+            <i class="fas fa-eye toggle-pw" id="toggle-login-pw" onclick="togglePw('login-pw', 'toggle-login-pw')"></i>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary">Login to YojanaMitra</button>
+        <a href="dashboard.html" class="btn-secondary">
+          Go to My Dashboard
+        </a>
+      </form>
+
+      <!-- Register Form -->
+      <!-- Register Form -->
+      <form id="register-form" data-form="register">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <div class="input-icon-wrap">
+            <i class="fas fa-user"></i>
+            <input type="text" name="name" class="form-input" placeholder="Enter your full name" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <div class="input-icon-wrap">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="email" class="form-input" placeholder="Enter your email address" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <div class="input-icon-wrap">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="password" id="reg-pw" class="form-input" placeholder="Create a strong password" required oninput="checkStrength(this.value)" />
+            <i class="fas fa-eye toggle-pw" id="toggle-reg-pw" onclick="togglePw('reg-pw', 'toggle-reg-pw')"></i>
+          </div>
+          <div class="pw-strength"><div class="pw-strength-bar" id="strength-bar"></div></div>
+          <span class="pw-label" id="strength-label">Security level: Too weak</span>
+        </div>
+        <button type="submit" class="btn-primary">Create Free Account</button>
+      </form>
+
+      <div class="footer-note" id="login-footer">
+        Don't have an account? <a href="javascript:void(0)" onclick="switchTab('register')">Register free</a>
+      </div>
+      <div class="footer-note" id="register-footer" style="display:none">
+        Already have an account? <a href="javascript:void(0)" onclick="switchTab('login')">Sign in here</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+function switchTab(type) {
+  const tabs = {
+    login: {
+      btn: document.getElementById('tab-login'),
+      header: document.getElementById('login-header'),
+      form: document.getElementById('login-form'),
+      footer: document.getElementById('login-footer'),
+      otherBtn: document.getElementById('tab-register'),
+      otherHeader: document.getElementById('register-header'),
+      otherForm: document.getElementById('register-form'),
+      otherFooter: document.getElementById('register-footer'),
+      hash: 'login'
+    },
+    register: {
+      btn: document.getElementById('tab-register'),
+      header: document.getElementById('register-header'),
+      form: document.getElementById('register-form'),
+      footer: document.getElementById('register-footer'),
+      otherBtn: document.getElementById('tab-login'),
+      otherHeader: document.getElementById('login-header'),
+      otherForm: document.getElementById('login-form'),
+      otherFooter: document.getElementById('login-footer'),
+      hash: 'register'
+    }
+  };
+
+  const t = tabs[type];
+  t.btn.classList.add('active');
+  t.otherBtn.classList.remove('active');
+  t.header.style.display = 'block';
+  t.otherHeader.style.display = 'none';
+  t.form.style.display = 'block';
+  t.otherForm.style.display = 'none';
+  t.footer.style.display = 'block';
+  t.otherFooter.style.display = 'none';
+  window.location.hash = t.hash;
+
+  // Toggle Google section only for login
+  const googleSection = document.getElementById('login-section');
+  if(googleSection) {
+    googleSection.style.display = (type === 'login') ? 'block' : 'none';
+  }
+  
+  document.getElementById('auth-alert').style.display = 'none';
+}
+
+function togglePw(inputId, iconId) {
+  const input = document.getElementById(inputId);
+  const icon = document.getElementById(iconId);
+  if (input.type === 'password') {
+    input.type = 'text';
+    icon.classList.replace('fa-eye', 'fa-eye-slash');
+  } else {
+    input.type = 'password';
+    icon.classList.replace('fa-eye-slash', 'fa-eye');
+  }
+}
+
+function checkStrength(pw) {
+  const bar = document.getElementById('strength-bar');
+  const label = document.getElementById('strength-label');
+  let score = 0;
+  if (pw.length >= 8) score++;
+  if (/[A-Z]/.test(pw)) score++;
+  if (/[0-9]/.test(pw)) score++;
+  if (/[^A-Za-z0-9]/.test(pw)) score++;
+
+  const colors = ['#e2ebf0', '#ef4444', '#f59e0b', '#10b981'];
+  const texts = ['Too weak', 'Weak', 'Strong', 'Extra Secure'];
+  
+  bar.style.width = (score * 25) + '%';
+  bar.style.background = colors[score] || '#ef4444';
+  label.innerText = 'Security level: ' + (texts[score] || 'Too weak');
+}
+
+async function checkAuth() {
+  try {
+    const res = await fetch('api/user');
+    if (res.ok) window.location.href = 'dashboard.html';
+  } catch (e) {}
+}
+
+window.onload = () => {
+  checkAuth();
+  if (window.location.hash === '#register') switchTab('register');
+  else switchTab('login');
+};
+
+function showAlert(msg, type='error') {
+  const el = document.getElementById('auth-alert');
+  el.textContent = msg;
+  el.style.display = 'block';
+  el.className = `alert alert-${type}`;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* Auth Logic */
+document.getElementById('login-form').onsubmit = async (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target).entries());
+  try {
+    const res = await fetch('api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (res.ok) {
+      showAlert('Login successful! Welcome back.', 'success');
+      setTimeout(() => window.location.href = 'dashboard.html', 800);
+    } else {
+      const err = await res.json();
+      showAlert(err.error || 'Check your credentials and try again.');
+    }
+  } catch (e) { showAlert('System unavailable. Please try later.'); }
+};
+
+document.getElementById('register-form').onsubmit = async (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target).entries());
+  try {
+    const res = await fetch('api/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (res.ok) {
+      showAlert('Success! Account created. Signing you in...', 'success');
+      setTimeout(() => switchTab('login'), 1200);
+    } else {
+      const err = await res.json();
+      showAlert(err.error || 'Registration failed. Try a different email.');
+    }
+  } catch (e) { showAlert('Network error. Profile not saved.'); }
+};
+
+/* Google Auth */
+let googleConfig = { client_id: "" };
+
+async function fetchGoogleConfig() {
+  try {
+    const res = await fetch('api/config');
+    const data = await res.json();
+    googleConfig.client_id = data.google_client_id;
+  } catch (e) { console.error("Config fetch failed", e); }
+}
+
+async function initiateGoogleLogin() {
+  if (!googleConfig.client_id) await fetchGoogleConfig();
+  
+  const isLocalhost = window.location.hostname === 'localhost';
+  const isIP = /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/.test(window.location.hostname);
+  
+  if (isIP) {
+    showAlert("Google Login requires 'localhost'. Please use http://localhost:5000 instead of IP.", "error");
+    return;
+  }
+
+  try {
+    google.accounts.id.initialize({
+      client_id: googleConfig.client_id,
+      callback: handleCredentialResponse
+    });
+    google.accounts.id.prompt();
+  } catch (err) {
+    console.error("GSI Error:", err);
+    showAlert("Google Services restricted or blocked. Check console for details.");
+  }
+}
+
+async function handleCredentialResponse(response) {
+  try {
+    const res = await fetch('api/auth/google', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ credential: response.credential })
+    });
+    if (res.ok) {
+      showAlert('Google login successful!', 'success');
+      setTimeout(() => window.location.href = 'dashboard.html', 800);
+    } else {
+      const err = await res.json();
+      showAlert('Google verify failed: ' + (err.error || 'Unknown error'));
+    }
+  } catch (e) { showAlert("OAuth server unreachable."); }
+}
+</script>
+
+<!-- WebGL Background Controller -->
+<script>
+(function() {
+  if (!window.THREE) return;
+
+  const canvas = document.getElementById('bg-canvas');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+
+  const geometry = new THREE.PlaneGeometry(2, 2);
+  const uniforms = {
+    uTime: { value: 0 },
+    uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
+    uColor1: { value: new THREE.Color(0xe36802) }, // Original Aurora Saffron
+    uColor2: { value: new THREE.Color(0xf6f4fa) }, // Original Aurora White/Off-white
+    uColor3: { value: new THREE.Color(0x1b990a) }  // Original Aurora Green
+  };
+
+  const vertexShader = `
+    varying vec2 vUv;
+    void main() {
+      vUv = uv;
+      gl_Position = vec4(position, 1.0);
+    }
+  `;
+
+  // Adapted "Color Bends" Fragment Shader
+  const fragmentShader = `
+    varying vec2 vUv;
+    uniform float uTime;
+    uniform vec2 uResolution;
+    uniform vec3 uColor1;
+    uniform vec3 uColor2;
+    uniform vec3 uColor3;
+
+    void main() {
+      vec2 p = vUv * 2.0 - 1.0;
+      p.x *= uResolution.x / uResolution.y;
+
+      float t = uTime * 0.4;
+      
+      // Calculate bending paths
+      float wave1 = sin(p.x * 0.8 + t) * 0.4 + sin(p.y * 0.5 - t * 0.5) * 0.2;
+      float wave2 = cos(p.x * 0.5 - t * 0.8) * 0.4 + cos(p.y * 0.8 + t * 0.3) * 0.2;
+      
+      float dist1 = abs(p.y - wave1);
+      float dist2 = abs(p.y - wave2);
+      
+      float glow1 = smoothstep(0.8, 0.0, dist1);
+      float glow2 = smoothstep(0.8, 0.0, dist2);
+      
+      vec3 col = vec3(1.0); // Base background
+      
+      // Layer tri-colors with smooth transitions
+      col = mix(col, uColor1, glow1 * 0.4);
+      col = mix(col, uColor3, glow2 * 0.4);
+      
+      // Middle white blend
+      float centerWave = (wave1 + wave2) * 0.5;
+      float distCenter = abs(p.y - centerWave);
+      float glowCenter = smoothstep(0.5, 0.0, distCenter);
+      col = mix(col, uColor2, glowCenter * 0.3);
+
+      gl_FragColor = vec4(col, 1.0);
+    }
+  `;
+
+  const material = new THREE.ShaderMaterial({
+    uniforms,
+    vertexShader,
+    fragmentShader
+  });
+
+  const mesh = new THREE.Mesh(geometry, material);
+  scene.add(mesh);
+
+  function animate(time) {
+    uniforms.uTime.value = time * 0.001;
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('resize', () => {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    uniforms.uResolution.value.set(window.innerWidth, window.innerHeight);
+  });
+
+  requestAnimationFrame(animate);
+})();
+</script>
+
+</body>
+</html>
+

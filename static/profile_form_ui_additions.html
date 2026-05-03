@@ -1,0 +1,416 @@
+<!--
+  Profile Form UI — additions for new_profile_fields.json
+  =========================================================
+  This file contains HTML snippets to ADD to the existing sections in
+  dashboard.html's Edit Profile modal, plus two completely new sections.
+
+  Each snippet is labelled with:
+    • SECTION: which ep-sec to edit
+    • WHERE:   before/after which existing element to insert
+
+  The snippets use the same CSS classes, ep-tg toggle groups, and
+  ep-field patterns already present in dashboard.html.
+
+  JS wiring changes are in profile_form_ui_js_patch.js (separate file).
+-->
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+  SECTION: ep-sec-identity  (Personal Identity)
+  WHERE: Replace the existing "Caste / Category" select in ep-sec-social
+         with the richer Social Category dropdown, AND add Date of Birth
+         improvement note. The gender field already exists; no change needed.
+
+  ADD inside ep-sec-identity, after the marital_status select:
+════════════════════════════════════════════════════════════════════════ -->
+<!-- NEW: Years of residence (shown after state is selected) -->
+<div class="ep-field ep-conditional" id="ep-years-in-state-row" style="display:none;">
+  <label>Years of Residence in Current State</label>
+  <input type="number" id="ep-years_in_current_state" min="0" max="100"
+         placeholder="e.g. 10" oninput="epTrackProgress()">
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+  SECTION: ep-sec-economic  (Economic Profile)
+  WHERE: Replace the existing Ration Card / BPL inference with an explicit
+         BPL toggle, and add a bank account field if not already present.
+  ADD after the existing income fields, before ration card row:
+════════════════════════════════════════════════════════════════════════ -->
+<!-- NEW: Explicit BPL flag -->
+<div class="ep-field">
+  <label>Do you belong to a Below Poverty Line (BPL) family?</label>
+  <div class="ep-tg" id="ep-bpl-group">
+    <button type="button" class="ep-btn" data-val="Yes" onclick="epTg('ep-bpl-group','Yes');epTrackProgress()">Yes</button>
+    <button type="button" class="ep-btn" data-val="No"  onclick="epTg('ep-bpl-group','No');epTrackProgress()">No</button>
+  </div>
+</div>
+
+<!-- NEW: Bank account (explicit; replaces bankAccountAvailable toggle) -->
+<div class="ep-field">
+  <label>Do you have a bank account in your name?</label>
+  <div class="ep-tg" id="ep-bank-account-v2-group">
+    <button type="button" class="ep-btn" data-val="Yes" onclick="epTg('ep-bank-account-v2-group','Yes');epTrackProgress()">Yes</button>
+    <button type="button" class="ep-btn" data-val="No"  onclick="epTg('ep-bank-account-v2-group','No');epTrackProgress()">No</button>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+  SECTION: ep-sec-social  (Social Profile)
+  WHERE: Replace existing Caste/Category select (id="ep-caste") with the
+         richer Social Category dropdown.
+  REPLACE the existing ep-caste field div with:
+════════════════════════════════════════════════════════════════════════ -->
+<div class="ep-field">
+  <label>Social Category <span class="req">*</span></label>
+  <select id="ep-social_category" onchange="epTrackProgress();epSyncCasteLegacy()">
+    <option value="">— Select —</option>
+    <option value="General">General</option>
+    <option value="Scheduled Caste (SC)">Scheduled Caste (SC)</option>
+    <option value="Scheduled Tribe (ST)">Scheduled Tribe (ST)</option>
+    <option value="Other Backward Class (OBC) - Non-Creamy Layer">OBC – Non-Creamy Layer</option>
+    <option value="Other Backward Class (OBC) - Creamy Layer">OBC – Creamy Layer</option>
+    <option value="Economically Weaker Section (EWS)">Economically Weaker Section (EWS)</option>
+    <option value="Minority">Minority</option>
+    <option value="Denotified/Nomadic/Semi-Nomadic Tribes (DNT/NT/SNT)">DNT / NT / SNT</option>
+  </select>
+</div>
+
+<!-- NEW: Special categories — ex-serviceman, SHG, freedom fighter -->
+<div class="ep-field">
+  <label>Are you an Ex-Serviceman or a dependent of one?</label>
+  <div class="ep-tg" id="ep-ex-serviceman-group">
+    <button type="button" class="ep-btn" data-val="Yes" onclick="epTg('ep-ex-serviceman-group','Yes');epTrackProgress()">Yes</button>
+    <button type="button" class="ep-btn" data-val="No"  onclick="epTg('ep-ex-serviceman-group','No');epTrackProgress()">No</button>
+  </div>
+</div>
+
+<div class="ep-field">
+  <label>Are you a member of a Self Help Group (SHG)?</label>
+  <div class="ep-tg" id="ep-shg-group">
+    <button type="button" class="ep-btn" data-val="Yes" onclick="epTg('ep-shg-group','Yes');epTrackProgress()">Yes</button>
+    <button type="button" class="ep-btn" data-val="No"  onclick="epTg('ep-shg-group','No');epTrackProgress()">No</button>
+  </div>
+</div>
+
+<div class="ep-field">
+  <label>Are you a freedom fighter or their dependent?</label>
+  <div class="ep-tg" id="ep-freedom-fighter-group">
+    <button type="button" class="ep-btn" data-val="Yes" onclick="epTg('ep-freedom-fighter-group','Yes');epTrackProgress()">Yes</button>
+    <button type="button" class="ep-btn" data-val="No"  onclick="epTg('ep-freedom-fighter-group','No');epTrackProgress()">No</button>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+  SECTION: ep-sec-occupation  (Occupation & Employment)
+  WHERE: ADD after the existing employment_status select.
+  Adds the richer Occupation Type dropdown with conditional visibility.
+════════════════════════════════════════════════════════════════════════ -->
+<!-- NEW: Occupation Type (shown when employed or self-employed) -->
+<div class="ep-field ep-conditional" id="ep-occupation-type-row" style="display:none;">
+  <label>Occupation Type</label>
+  <select id="ep-occupation_type" onchange="epTrackProgress()">
+    <option value="">— Select —</option>
+    <option value="Farmer/Agricultural Labourer">Farmer / Agricultural Labourer</option>
+    <option value="Construction Worker">Construction Worker (BOCW)</option>
+    <option value="Artisan/Craftsperson">Artisan / Craftsperson</option>
+    <option value="Street Vendor">Street Vendor</option>
+    <option value="Safai Karamchari/Sanitation Worker">Safai Karamchari / Sanitation Worker</option>
+    <option value="Domestic Worker">Domestic Worker</option>
+    <option value="Transport Worker (Driver/Conductor)">Transport Worker (Driver / Conductor)</option>
+    <option value="Government Employee">Government Employee</option>
+    <option value="Private Sector Employee">Private Sector Employee</option>
+    <option value="Journalist">Journalist</option>
+    <option value="Teacher/Academician">Teacher / Academician</option>
+    <option value="Healthcare Worker">Healthcare Worker</option>
+    <option value="Fisherman">Fisherman</option>
+    <option value="Weaver">Weaver</option>
+    <option value="Other">Other</option>
+  </select>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+  NEW SECTION: Family Members
+  INSERT as a new ep-sec between ep-sec-social and ep-sec-occupation
+  (renumber the step counters accordingly in your existing HTML).
+════════════════════════════════════════════════════════════════════════ -->
+<div class="ep-sec" id="ep-sec-family">
+  <div class="ep-sec-hdr" onclick="epToggleSec('family')">
+    <div class="ep-sec-num"><span class="ep-num-txt">★</span></div><!-- update number to fit sequence -->
+    <div class="ep-sec-meta">
+      <div class="ep-sec-title">Family Members</div>
+      <div class="ep-sec-desc">Spouse, children and dependent parents</div>
+    </div>
+    <span class="ep-badge ep-badge-pend" id="ep-badge-family">Pending</span>
+  </div>
+  <div class="ep-sec-body">
+    <p class="ep-hint" style="margin-bottom:12px;color:var(--muted);font-size:13px;">
+      Adding family members lets us find schemes for your children, detect
+      orphan / widow status, and match pension schemes automatically.
+    </p>
+
+    <!-- Dynamic list of family member rows -->
+    <div id="ep-family-list"></div>
+
+    <button type="button" class="ep-add-btn" onclick="epAddFamilyMember()">
+      <i class="fas fa-plus"></i> Add Family Member
+    </button>
+
+    <!-- Template (hidden, cloned by JS) -->
+    <template id="ep-family-member-tpl">
+      <div class="ep-family-row" style="border:1px solid var(--line);border-radius:8px;padding:12px;margin-bottom:10px;position:relative;">
+        <button type="button" class="ep-remove-btn" onclick="epRemoveFamilyMember(this)"
+                style="position:absolute;top:8px;right:8px;background:none;border:none;color:var(--muted);cursor:pointer;">
+          <i class="fas fa-times"></i>
+        </button>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div class="ep-field">
+            <label>Relation</label>
+            <select class="ep-fm-relation" onchange="epTrackProgress()">
+              <option value="">— Select —</option>
+              <option value="Spouse">Spouse</option>
+              <option value="Son">Son</option>
+              <option value="Daughter">Daughter</option>
+              <option value="Father">Father</option>
+              <option value="Mother">Mother</option>
+            </select>
+          </div>
+          <div class="ep-field">
+            <label>Date of Birth</label>
+            <input type="date" class="ep-fm-dob" onchange="epTrackProgress()">
+          </div>
+          <div class="ep-field" style="grid-column:1/-1;">
+            <label>Is this person alive?</label>
+            <div class="ep-tg ep-fm-alive-group">
+              <button type="button" class="ep-btn ep-active" data-val="Yes"
+                      onclick="epTgInRow(this,'ep-fm-alive-group','Yes')">Yes</button>
+              <button type="button" class="ep-btn" data-val="No"
+                      onclick="epTgInRow(this,'ep-fm-alive-group','No')">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+  NEW SECTION: Land Ownership
+  INSERT after ep-sec-occupation.
+════════════════════════════════════════════════════════════════════════ -->
+<div class="ep-sec" id="ep-sec-land">
+  <div class="ep-sec-hdr" onclick="epToggleSec('land')">
+    <div class="ep-sec-num"><span class="ep-num-txt">★</span></div>
+    <div class="ep-sec-meta">
+      <div class="ep-sec-title">Land Ownership</div>
+      <div class="ep-sec-desc">Agricultural, residential, or commercial land</div>
+    </div>
+    <span class="ep-badge ep-badge-pend" id="ep-badge-land">Pending</span>
+  </div>
+  <div class="ep-sec-body">
+    <div id="ep-land-list"></div>
+    <button type="button" class="ep-add-btn" onclick="epAddLandParcel()">
+      <i class="fas fa-plus"></i> Add Land Parcel
+    </button>
+
+    <template id="ep-land-parcel-tpl">
+      <div class="ep-land-row" style="border:1px solid var(--line);border-radius:8px;padding:12px;margin-bottom:10px;position:relative;">
+        <button type="button" class="ep-remove-btn" onclick="epRemoveLandParcel(this)"
+                style="position:absolute;top:8px;right:8px;background:none;border:none;color:var(--muted);cursor:pointer;">
+          <i class="fas fa-times"></i>
+        </button>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div class="ep-field">
+            <label>Area (in acres)</label>
+            <input type="number" step="0.01" class="ep-lp-acres" placeholder="e.g. 2.5" oninput="epTrackProgress()">
+          </div>
+          <div class="ep-field">
+            <label>Land Type</label>
+            <select class="ep-lp-type" onchange="epToggleLandIrrigated(this);epTrackProgress()">
+              <option value="">— Select —</option>
+              <option value="Agricultural">Agricultural</option>
+              <option value="Residential">Residential</option>
+              <option value="Commercial">Commercial</option>
+            </select>
+          </div>
+          <div class="ep-field ep-lp-irrigated-row" style="grid-column:1/-1;display:none;">
+            <label>Is this agricultural land irrigated?</label>
+            <div class="ep-tg ep-lp-irrigated-group">
+              <button type="button" class="ep-btn" data-val="Yes"
+                      onclick="epTgInRow(this,'ep-lp-irrigated-group','Yes')">Yes</button>
+              <button type="button" class="ep-btn ep-active" data-val="No"
+                      onclick="epTgInRow(this,'ep-lp-irrigated-group','No')">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+  SECTION: ep-sec-education  (Education)
+  WHERE: Replace the existing flat education dropdowns with a structured
+         list that captures multiple qualifications.
+  ADD after the existing education section body, OR replace it entirely:
+════════════════════════════════════════════════════════════════════════ -->
+<!-- NEW: Structured education list -->
+<div class="ep-field" style="margin-top:12px;">
+  <label style="margin-bottom:8px;display:block;">Educational Qualifications</label>
+  <div id="ep-edu-list"></div>
+  <button type="button" class="ep-add-btn" onclick="epAddEduEntry()">
+    <i class="fas fa-plus"></i> Add Qualification
+  </button>
+
+  <template id="ep-edu-entry-tpl">
+    <div class="ep-edu-row" style="border:1px solid var(--line);border-radius:8px;padding:12px;margin-bottom:10px;position:relative;">
+      <button type="button" class="ep-remove-btn" onclick="epRemoveEduEntry(this)"
+              style="position:absolute;top:8px;right:8px;background:none;border:none;color:var(--muted);cursor:pointer;">
+        <i class="fas fa-times"></i>
+      </button>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div class="ep-field">
+          <label>Level</label>
+          <select class="ep-edu-level" onchange="epTrackProgress()">
+            <option value="">— Select —</option>
+            <option value="Below Class 10">Below Class 10</option>
+            <option value="Class 10">Class 10</option>
+            <option value="Class 12">Class 12</option>
+            <option value="Diploma">Diploma</option>
+            <option value="Graduation">Graduation</option>
+            <option value="Post Graduation">Post Graduation</option>
+            <option value="PhD">PhD</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="ep-field">
+          <label>Stream / Discipline</label>
+          <input type="text" class="ep-edu-stream" placeholder="e.g. Science" oninput="epTrackProgress()">
+        </div>
+        <div class="ep-field">
+          <label>Status</label>
+          <select class="ep-edu-status" onchange="epTrackProgress()">
+            <option value="">— Select —</option>
+            <option value="Completed">Completed</option>
+            <option value="Pursuing">Pursuing</option>
+            <option value="Dropped Out">Dropped Out</option>
+          </select>
+        </div>
+        <div class="ep-field">
+          <label>Percentage / CGPA</label>
+          <input type="number" step="0.01" class="ep-edu-pct" placeholder="e.g. 72.5" oninput="epTrackProgress()">
+        </div>
+        <div class="ep-field">
+          <label>Year of Passing</label>
+          <input type="number" class="ep-edu-year" placeholder="e.g. 2022" oninput="epTrackProgress()">
+        </div>
+        <div class="ep-field">
+          <label>Institute Type</label>
+          <select class="ep-edu-inst" onchange="epTrackProgress()">
+            <option value="">— Select —</option>
+            <option value="Government">Government</option>
+            <option value="Government-Aided">Government-Aided</option>
+            <option value="Private">Private</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </template>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+  SECTION: ep-sec-disability  (Disability)
+  WHERE: After existing disability Yes/No toggle, add structured list of
+         disability types + percentages (shown when disability == "Yes").
+════════════════════════════════════════════════════════════════════════ -->
+<!-- NEW: Structured disability details (conditional on disability == Yes) -->
+<div class="ep-field ep-conditional" id="ep-disability-details-row" style="display:none;">
+  <label style="margin-bottom:8px;display:block;">Disability Details</label>
+  <div id="ep-disability-list"></div>
+  <button type="button" class="ep-add-btn" onclick="epAddDisabilityEntry()">
+    <i class="fas fa-plus"></i> Add Disability
+  </button>
+
+  <template id="ep-disability-entry-tpl">
+    <div class="ep-dis-row" style="border:1px solid var(--line);border-radius:8px;padding:12px;margin-bottom:10px;position:relative;">
+      <button type="button" class="ep-remove-btn" onclick="epRemoveDisabilityEntry(this)"
+              style="position:absolute;top:8px;right:8px;background:none;border:none;color:var(--muted);cursor:pointer;">
+        <i class="fas fa-times"></i>
+      </button>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div class="ep-field">
+          <label>Type of Disability</label>
+          <select class="ep-dis-type" onchange="epTrackProgress()">
+            <option value="">— Select —</option>
+            <option value="Locomotor Disability">Locomotor Disability</option>
+            <option value="Visual Impairment">Visual Impairment</option>
+            <option value="Hearing Impairment">Hearing Impairment</option>
+            <option value="Speech and Language Disability">Speech and Language Disability</option>
+            <option value="Intellectual Disability">Intellectual Disability</option>
+            <option value="Mental Illness">Mental Illness</option>
+            <option value="Chronic Neurological Conditions">Chronic Neurological Conditions</option>
+            <option value="Blood Disorder">Blood Disorder</option>
+            <option value="Multiple Disabilities">Multiple Disabilities</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="ep-field">
+          <label>Percentage of Disability</label>
+          <input type="number" min="0" max="100" class="ep-dis-pct" placeholder="e.g. 40" oninput="epTrackProgress()">
+        </div>
+      </div>
+    </div>
+  </template>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+  NEW SECTION: Health
+  INSERT before ep-sec-documents.
+════════════════════════════════════════════════════════════════════════ -->
+<div class="ep-sec" id="ep-sec-health">
+  <div class="ep-sec-hdr" onclick="epToggleSec('health')">
+    <div class="ep-sec-num"><span class="ep-num-txt">★</span></div>
+    <div class="ep-sec-meta">
+      <div class="ep-sec-title">Health</div>
+      <div class="ep-sec-desc">Critical illness, pregnancy and maternity</div>
+    </div>
+    <span class="ep-badge ep-badge-pend" id="ep-badge-health">Pending</span>
+  </div>
+  <div class="ep-sec-body">
+    <!-- Critical illness -->
+    <div class="ep-field">
+      <label>Do you or a dependent family member have a critical illness?
+        <span style="font-weight:400;color:var(--muted);"> (Cancer, Kidney disease, AIDS, etc.)</span>
+      </label>
+      <div class="ep-tg" id="ep-critical-illness-group">
+        <button type="button" class="ep-btn" data-val="Yes" onclick="epTg('ep-critical-illness-group','Yes');epTrackProgress()">Yes</button>
+        <button type="button" class="ep-btn" data-val="No"  onclick="epTg('ep-critical-illness-group','No');epTrackProgress()">No</button>
+      </div>
+    </div>
+
+    <!-- Pregnancy — shown only for Female -->
+    <div class="ep-field ep-conditional" id="ep-pregnant-row" style="display:none;">
+      <label>Are you currently pregnant?</label>
+      <div class="ep-tg" id="ep-pregnant-group">
+        <button type="button" class="ep-btn" data-val="Yes" onclick="epTg('ep-pregnant-group','Yes');epTrackProgress()">Yes</button>
+        <button type="button" class="ep-btn" data-val="No"  onclick="epTg('ep-pregnant-group','No');epTrackProgress()">No</button>
+      </div>
+    </div>
+
+    <!-- Lactating mother — shown only for Female -->
+    <div class="ep-field ep-conditional" id="ep-lactating-row" style="display:none;">
+      <label>Are you a lactating mother?</label>
+      <div class="ep-tg" id="ep-lactating-group">
+        <button type="button" class="ep-btn" data-val="Yes" onclick="epTg('ep-lactating-group','Yes');epTrackProgress()">Yes</button>
+        <button type="button" class="ep-btn" data-val="No"  onclick="epTg('ep-lactating-group','No');epTrackProgress()">No</button>
+      </div>
+    </div>
+  </div>
+</div>

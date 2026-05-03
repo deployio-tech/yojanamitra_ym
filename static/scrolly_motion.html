@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YojanaMitra Scrollytelling — Advanced Computing Concept</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --accent: #5560f5;
+            --accent-glow: rgba(85, 96, 245, 0.4);
+            --card-glass: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --font: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font);
+            overflow-x: hidden;
+        }
+
+        /* Scrollytelling Container */
+        .st-container {
+            position: relative;
+            height: 600vh; /* Long enough for multiple stages */
+        }
+
+        .st-sticky {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #161824 0%, #0a0b10 100%);
+        }
+
+        /* Central Core */
+        .st-core-wrapper {
+            position: absolute;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .st-core {
+            width: 140px;
+            height: 140px;
+            background: var(--accent);
+            border-radius: 35% 65% 70% 30% / 30% 30% 70% 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 50px var(--accent-glow);
+            animation: coreMorph 8s ease-in-out infinite;
+            position: relative;
+        }
+
+        .st-core::after {
+            content: 'YM';
+            font-weight: 800;
+            font-size: 2rem;
+            color: white;
+            letter-spacing: -1px;
+        }
+
+        .st-core-glow {
+            position: absolute;
+            inset: -20px;
+            border: 2px solid var(--accent);
+            border-radius: inherit;
+            opacity: 0.3;
+            animation: corePulse 2s ease-out infinite;
+        }
+
+        @keyframes coreMorph {
+            0%, 100% { border-radius: 35% 65% 70% 30% / 30% 30% 70% 70%; transform: scale(1); }
+            50% { border-radius: 65% 35% 30% 70% / 70% 70% 30% 30%; transform: scale(1.1); }
+        }
+
+        @keyframes corePulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        /* Animated Stages Content */
+        .st-label {
+            position: absolute;
+            top: 15%;
+            text-align: center;
+            max-width: 600px;
+            opacity: 0;
+            transform: translateY(20px);
+            z-index: 20;
+        }
+
+        .st-label h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .st-label p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Floating Cards */
+        .st-card {
+            position: absolute;
+            width: 220px;
+            padding: 16px;
+            background: var(--card-glass);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 5;
+            opacity: 0;
+        }
+
+        .st-card.doc-card { border-left: 4px solid var(--accent); }
+        .st-card.q-card { border-left: 4px solid #10b981; }
+
+        .st-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        .st-card-content {
+            height: 12px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            width: 100%;
+        }
+        .st-card-content.half { width: 60%; }
+        .st-card-placeholder {
+           font-size: 0.85rem;
+           font-weight: 600;
+           color: var(--text-main);
+           margin-top: 4px;
+        }
+
+        /* Advanced Computing Effect (Neural synthesis) */
+        .st-synthesis {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            display: none;
+        }
+
+        .st-node {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 50%;
+            filter: blur(1px);
+        }
+
+        .st-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            transform-origin: left center;
+            opacity: 0;
+        }
+
+        /* Reveal Stage */
+        .st-reveal-list {
+            position: absolute;
+            width: 100%;
+            max-width: 800px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            z-index: 30;
+        }
+
+        .st-scheme-item {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--card-border);
+            padding: 24px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .st-scheme-item:hover {
+            background: rgba(85, 96, 245, 0.1);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .st-scheme-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .st-scheme-info h4 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+        .st-scheme-info p { font-size: 0.75rem; color: var(--text-muted); }
+
+    </style>
+</head>
+<body>
+
+    <div class="st-container">
+        <div class="st-sticky">
+            
+            <!-- Labels -->
+            <div id="label-gathering" class="st-label">
+                <h2>The Gathering</h2>
+                <p>Importing your identity data and verifying key eligibility vectors.</p>
+            </div>
+            <div id="label-singularity" class="st-label">
+                <h2>The Singularity</h2>
+                <p>Harmonizing isolated data points into a unified eligibility profile.</p>
+            </div>
+            <div id="label-synthesis" class="st-label">
+                <h2>Neural Synthesis</h2>
+                <p>Processing 1,000+ legislative rules against your unique data set.</p>
+            </div>
+            <div id="label-reveal" class="st-label">
+                <h2>Matched Schemes</h2>
+                <p>Your verified gateway to government welfare, unlocked.</p>
+            </div>
+
+            <!-- Central Hub -->
+            <div class="st-core-wrapper">
+                <div id="core" class="st-core">
+                    <div class="st-core-glow"></div>
+                </div>
+            </div>
+
+            <!-- Synthesis Lines Container -->
+            <div id="synthesis-wrap" class="st-synthesis"></div>
+
+            <!-- Revelation List -->
+            <div id="reveal-list" class="st-reveal-list">
+                <div class="st-scheme-item">
+                    <div class="st-scheme-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="st-scheme-info">
+                        <h4>Higher Education Scholarship</h4>
+                        <p>Fully funded grants for eligible students.</p>
+                    </div>
+                </div>
+                <div class="st-scheme-item">
+                    <div class="st-scheme-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+                    <div class="st-scheme-info">
+                        <h4>PM-Kisan Nidhi</h4>
+                        <p>Direct financial support for verified farmers.</p>
+                    </div>
+                </div>
+                <div class="st-scheme-item">
+                    <div class="st-scheme-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                    <div class="st-scheme-info">
+                        <h4>Ayushman Bharat</h4>
+                        <p>Universal health coverage for your family.</p>
+                    </div>
+                </div>
+                <div class="st-scheme-item">
+                    <div class="st-scheme-icon"><i class="fa-solid fa-house"></i></div>
+                    <div class="st-scheme-info">
+                        <h4>PMAY Rural</h4>
+                        <p>Assistance for building your permanent home.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Documents (Stage 1) -->
+            <div class="st-card doc-card" data-origin="top" style="top: -250px; left: 20%;"><div class="st-card-header"><span>Aadhar Card</span><i class="fa-solid fa-id-card"></i></div><div class="st-card-content"></div><div class="st-card-content half"></div><div class="st-card-placeholder">VERIFYING...</div></div>
+            <div class="st-card doc-card" data-origin="bottom" style="bottom: -250px; left: 40%;"><div class="st-card-header"><span>PAN Card</span><i class="fa-solid fa-passport"></i></div><div class="st-card-content"></div><div class="st-card-content half"></div><div class="st-card-placeholder">VERIFYING...</div></div>
+            <div class="st-card doc-card" data-origin="left" style="top: 30%; left: -250px;"><div class="st-card-header"><span>Ration Card</span><i class="fa-solid fa-book-open"></i></div><div class="st-card-content"></div><div class="st-card-content half"></div><div class="st-card-placeholder">VERIFYING...</div></div>
+            <div class="st-card doc-card" data-origin="right" style="top: 60%; right: -250px;"><div class="st-card-header"><span>Voter ID</span><i class="fa-solid fa-square-check"></i></div><div class="st-card-content"></div><div class="st-card-content half"></div><div class="st-card-placeholder">VERIFYING...</div></div>
+
+            <!-- Floating Questions (Stage 1.5) -->
+            <div class="st-card q-card" data-origin="top" style="top: -250px; right: 20%;"><div class="st-card-header"><span>Income</span><i class="fa-solid fa-circle-question"></i></div><div class="st-card-placeholder">Income < 2.5L?</div><div class="st-card-content"></div></div>
+            <div class="st-card q-card" data-origin="bottom" style="bottom: -250px; right: 30%;"><div class="st-card-header"><span>Farmer</span><i class="fa-solid fa-circle-question"></i></div><div class="st-card-placeholder">Are you a farmer?</div><div class="st-card-content"></div></div>
+            <div class="st-card q-card" data-origin="left" style="top: 70%; left: -250px;"><div class="st-card-header"><span>State</span><i class="fa-solid fa-circle-question"></i></div><div class="st-card-placeholder">Reside in MH?</div><div class="st-card-content"></div></div>
+            <div class="st-card q-card" data-origin="right" style="top: 20%; right: -250px;"><div class="st-card-header"><span>Disability</span><i class="fa-solid fa-circle-question"></i></div><div class="st-card-placeholder">Physically abled?</div><div class="st-card-content"></div></div>
+
+        </div>
+        <!-- Scroll Hint -->
+        <div id="scroll-hint" style="position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); font-size: 0.8rem; color: var(--text-muted); z-index: 100; animation: bounce 2s infinite;">
+            <i class="fa-solid fa-chevron-down" style="margin-right: 8px;"></i> Scroll to explore the journey
+        </div>
+
+        <style>
+            @keyframes bounce {
+                0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
+                40% {transform: translateX(-50%) translateY(-10px);}
+                60% {transform: translateX(-50%) translateY(-5px);}
+            }
+        </style>
+
+    </div>
+
+    <!-- Motion Library -->
+    <script type="module">
+        import { animate, scroll, stagger } from "https://cdn.jsdelivr.net/npm/motion/+esm";
+
+        const container = document.querySelector(".st-container");
+        const docCards = document.querySelectorAll(".doc-card");
+        const qCards = document.querySelectorAll(".q-card");
+        const core = document.querySelector("#core");
+        const revealList = document.querySelector("#reveal-list");
+        const synthesisWrap = document.querySelector("#synthesis-wrap");
+        const scrollHint = document.querySelector("#scroll-hint");
+
+        // Labels
+        const lblGathering = document.querySelector("#label-gathering");
+        const lblSingularity = document.querySelector("#label-singularity");
+        const lblSynthesis = document.querySelector("#label-synthesis");
+        const lblReveal = document.querySelector("#label-reveal");
+
+        // Generate Synthesis Lines
+        for (let i = 0; i < 40; i++) {
+            const line = document.createElement("div");
+            line.className = "st-line";
+            line.style.left = "50%";
+            line.style.top = "50%";
+            line.style.width = (100 + Math.random() * 300) + "px";
+            line.style.transform = `rotate(${Math.random() * 360}deg)`;
+            synthesisWrap.appendChild(line);
+        }
+        const lines = document.querySelectorAll(".st-line");
+
+        // --- SCROLL ANIMATION LOGIC ---
+
+        scroll((p) => {
+            if (p > 0.05) scrollHint.style.opacity = 0;
+            else scrollHint.style.opacity = 1;
+
+            // Stage 1: The Gathering (0 - 0.25)
+            // Documents fly in first (0 - 0.15)
+            docCards.forEach((card, i) => {
+                const origin = card.dataset.origin;
+                let x = 0, yPos = 0;
+                const offset = 500;
+                const animP = Math.max(0, Math.min(1, p / 0.15)); 
+
+                if (origin === 'top') yPos = -offset + (offset * 1.4 * animP);
+                if (origin === 'bottom') yPos = offset - (offset * 1.4 * animP);
+                if (origin === 'left') x = -offset + (offset * 1.4 * animP);
+                if (origin === 'right') x = offset - (offset * 1.4 * animP);
+
+                card.style.transform = `translate(${x}px, ${yPos}px)`;
+                card.style.opacity = animP;
+            });
+
+            // Questions fly in (0.1 - 0.25)
+            qCards.forEach((card, i) => {
+                const origin = card.dataset.origin;
+                let x = 0, yPos = 0;
+                const offset = 500;
+                const animP = Math.max(0, Math.min(1, (p - 0.1) / 0.15));
+
+                if (origin === 'top') yPos = -offset + (offset * 1.4 * animP);
+                if (origin === 'bottom') yPos = offset - (offset * 1.4 * animP);
+                if (origin === 'left') x = -offset + (offset * 1.4 * animP);
+                if (origin === 'right') x = offset - (offset * 1.4 * animP);
+
+                card.style.transform = `translate(${x}px, ${yPos}px)`;
+                card.style.opacity = animP;
+            });
+
+            // Labels visibility
+            lblGathering.style.opacity = (p > 0.02 && p < 0.2) ? 1 : 0;
+            lblGathering.style.transform = `translateY(${(p > 0.02 && p < 0.2) ? 0 : 20}px)`;
+
+            // Stage 2: The Singularity (0.25 - 0.45)
+            const singularityProgress = Math.max(0, Math.min(1, (p - 0.25) * 5));
+            if (singularityProgress > 0) {
+                [...docCards, ...qCards].forEach((card) => {
+                    card.style.opacity = 1 - singularityProgress;
+                    card.style.scale = 1 - singularityProgress;
+                });
+                core.style.scale = 1 + singularityProgress * 0.5;
+            } else {
+                [...docCards, ...qCards].forEach((card) => card.style.scale = 1);
+                core.style.scale = 1;
+            }
+
+            lblSingularity.style.opacity = (p > 0.3 && p < 0.45) ? 1 : 0;
+            lblSingularity.style.transform = `translateY(${(p > 0.3 && p < 0.45) ? 0 : 20}px)`;
+
+            // Stage 3: Neural Synthesis (0.45 - 0.75)
+            const synthesisProgress = Math.max(0, Math.min(1, (p - 0.45) * 4));
+            synthesisWrap.style.display = (p > 0.45 && p < 0.8) ? 'block' : 'none';
+            
+            if (synthesisProgress > 0 && p < 0.8) {
+                lines.forEach((line, i) => {
+                    line.style.opacity = Math.sin((p * 40) + i) * 0.4 + 0.4;
+                    line.style.scale = 0.8 + synthesisProgress * 0.5;
+                });
+                core.style.filter = `brightness(${1 + synthesisProgress * 1.5}) blur(${synthesisProgress * 1.5}px)`;
+            }
+
+            lblSynthesis.style.opacity = (p > 0.5 && p < 0.72) ? 1 : 0;
+            lblSynthesis.style.transform = `translateY(${(p > 0.5 && p < 0.72) ? 0 : 20}px)`;
+
+            // Stage 4: Revelation (0.75 - 1.0)
+            const revealProgress = Math.max(0, Math.min(1, (p - 0.75) * 5));
+            revealList.style.opacity = revealProgress;
+            revealList.style.transform = `translateY(${40 - revealProgress * 40}px)`;
+            
+            core.style.opacity = 1 - revealProgress;
+            
+            lblReveal.style.opacity = (p > 0.82) ? 1 : 0;
+            lblReveal.style.transform = `translateY(${(p > 0.82) ? 0 : 20}px)`;
+        });
+
+    </script>
+</body>
+</html>
