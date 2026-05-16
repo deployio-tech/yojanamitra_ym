@@ -11,11 +11,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Copy application code
 COPY . /app/
 
+# Copy and make entrypoint script executable
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Initialize database on startup
-RUN python -c "from app import app, db; app.app_context().push(); db.create_all(); print('✅ Database tables created')" || echo "⚠️ Database initialization skipped"
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
@@ -29,5 +30,5 @@ ENV FLASK_APP=app.py \
     FLASK_ENV=production \
     PYTHONUNBUFFERED=1
 
-# Run with gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "4", "--timeout", "120", "--access-logfile", "-", "--error-logfile", "-", "app:app"]
+# Entrypoint script handles DB init and startup
+ENTRYPOINT ["/app/entrypoint.sh"]
