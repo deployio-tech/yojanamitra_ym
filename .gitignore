@@ -27,7 +27,9 @@ instance/
 !testsprite.config.json
 !mcp.json
 !concept_registry.json
+!profile_field_registry.json
 *.txt
+!requirements.txt
 *.log
 *.csv
 *.xlsx

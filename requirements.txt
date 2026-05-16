@@ -1,0 +1,32 @@
+# YojanaMitra Python Dependencies
+
+# Flask & Web Framework
+Flask==3.0.0
+Werkzeug==3.0.0
+Flask-CORS==4.0.0
+Flask-SQLAlchemy==3.1.1
+gunicorn==21.2.0
+
+# Database
+SQLAlchemy==2.0.23
+psycopg2-binary==2.9.9
+
+# Google AI & APIs
+google-generativeai==0.4.0
+google-auth==2.25.2
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+Pillow==10.1.0
+
+# Utilities
+python-dotenv==1.0.0
+requests==2.31.0
+APScheduler==3.10.4
+
+# Email & Notifications
+python-multipart==0.0.6
+sendgrid==6.10.0
+twilio==8.10.0
+
+# Security & Hashing
+Werkzeug>=2.0
