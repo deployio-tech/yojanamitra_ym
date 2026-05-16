@@ -1,0 +1,48 @@
+{
+  "profile_fields": {
+    "name": {
+      "form_mappings": ["fullName", "full_name"],
+      "type": "string"
+    },
+    "email": {
+      "form_mappings": ["email_address", "emailAddress"],
+      "type": "string"
+    },
+    "age": {
+      "form_mappings": ["user_age", "userAge", "years_old"],
+      "type": "integer"
+    },
+    "gender": {
+      "form_mappings": ["sex", "gender_identity"],
+      "type": "string"
+    },
+    "state": {
+      "form_mappings": ["location_state", "state_of_residence"],
+      "type": "string"
+    },
+    "caste": {
+      "form_mappings": ["caste_category", "social_category"],
+      "type": "string"
+    },
+    "income": {
+      "form_mappings": ["annual_income", "family_income"],
+      "type": "number"
+    },
+    "occupation": {
+      "form_mappings": ["profession", "job_title"],
+      "type": "string"
+    },
+    "education": {
+      "form_mappings": ["educational_qualification", "education_level"],
+      "type": "string"
+    },
+    "disability": {
+      "form_mappings": ["disability_status", "has_disability"],
+      "type": "boolean"
+    },
+    "marital_status": {
+      "form_mappings": ["marriage_status", "married"],
+      "type": "string"
+    }
+  }
+}
