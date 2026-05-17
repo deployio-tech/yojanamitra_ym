@@ -28,6 +28,11 @@ instance/
 !mcp.json
 !concept_registry.json
 !profile_field_registry.json
+!all_questions_by_scheme.json
+!all_extracted_conditions.json
+!all_schemes_fixed.json
+!all_conditions.json
+!all_schemes_export.json
 *.txt
 !requirements.txt
 *.log
