@@ -8188,16 +8188,162 @@ def init_db():
 
         scheme_count = Scheme.query.count()
         print(f"Current scheme count: {scheme_count}")
-        # NOTE: Seeding disabled - schemes are added via scraping system
-        # The Scheme model enforces Condition table usage for eligibility criteria
-        # so direct column assignment is blocked by design
-        # if scheme_count == 0:
-        #     print("Calling seed_schemes()...")
-        #     seed_schemes()
-        # else:
-        #     print(f"Skipping seed - {scheme_count} schemes already exist")
+
+        if scheme_count == 0:
+            print("📥 Seeding schemes, conditions, and questions from data files...")
+            try:
+                seed_from_files()
+            except Exception as seed_err:
+                print(f"⚠ Warning during seeding: {seed_err}")
+        else:
+            print(f"✓ Database already has {scheme_count} schemes - skipping seed")
+
         db.session.commit()
         print("Database initialized successfully!")
+
+
+def seed_from_files():
+    """Seed schemes, conditions, and questions from JSON data files"""
+    print("  Loading all_schemes_fixed.json...")
+
+    # Load schemes
+    schemes_file = "all_schemes_fixed.json"
+    if not os.path.exists(schemes_file):
+        print(f"  ⚠ {schemes_file} not found - skipping scheme seeding")
+        return
+
+    try:
+        with open(schemes_file, "r", encoding="utf-8") as f:
+            schemes_data = json.load(f)
+
+        added_count = 0
+        for s_data in schemes_data:
+            # Check if scheme already exists
+            if Scheme.query.filter_by(name=s_data.get("name")).first():
+                continue
+
+            # Helper to convert list to JSON if needed
+            def to_json_if_list(val):
+                if isinstance(val, list):
+                    return json.dumps(val)
+                return val
+
+            scheme = Scheme(
+                name=s_data.get("name"),
+                description=s_data.get("description"),
+                category=s_data.get("category"),
+                target_audience=s_data.get("targetAudience")
+                or s_data.get("target_audience"),
+                benefits=s_data.get("benefits"),
+                eligibility=s_data.get("eligibility"),
+                application_process=s_data.get("application_process"),
+                documents_required=s_data.get("documents_required"),
+                exclusions=s_data.get("exclusions"),
+                portal_link=s_data.get("portal_link"),
+                min_age=s_data.get("min_age"),
+                max_age=s_data.get("max_age"),
+                min_income=s_data.get("min_income"),
+                max_income=s_data.get("max_income"),
+                allowed_genders=to_json_if_list(s_data.get("allowed_genders")),
+                allowed_occupations=to_json_if_list(s_data.get("allowed_occupations")),
+                allowed_castes=to_json_if_list(s_data.get("allowed_castes")),
+                allowed_states=to_json_if_list(s_data.get("allowed_states")),
+                allowed_education=to_json_if_list(s_data.get("allowed_education")),
+                allowed_marital_status=to_json_if_list(
+                    s_data.get("allowed_marital_status")
+                ),
+                allowed_religions=to_json_if_list(s_data.get("allowed_religions")),
+                allowed_ration_card_types=to_json_if_list(
+                    s_data.get("allowed_ration_card_types")
+                ),
+                allowed_father_occupations=to_json_if_list(
+                    s_data.get("allowed_father_occupations")
+                ),
+                allowed_mother_occupations=to_json_if_list(
+                    s_data.get("allowed_mother_occupations")
+                ),
+                disability_requirement=s_data.get("disability_requirement", "Any"),
+                residence_requirement=s_data.get("residence_requirement", "Any"),
+                minority_requirement=s_data.get("minority_requirement", "Any"),
+                senior_citizen_requirement=s_data.get(
+                    "senior_citizen_requirement", "Any"
+                ),
+                widow_requirement=s_data.get("widow_requirement", "Any"),
+                orphan_requirement=s_data.get("orphan_requirement"),
+                tribal_requirement=s_data.get("tribal_requirement"),
+                disability_percentage_min=s_data.get("disability_percentage_min"),
+                bank_account_required=s_data.get("bank_account_required"),
+                aadhaar_required=s_data.get("aadhaar_required"),
+                min_education_level=s_data.get("min_education_level"),
+                is_active=True,
+                extraction_status="loaded",
+            )
+            db.session.add(scheme)
+            added_count += 1
+
+        db.session.commit()
+        print(f"  ✓ Added {added_count} schemes")
+    except Exception as e:
+        db.session.rollback()
+        print(f"  ✗ Error loading schemes: {e}")
+        return
+
+    # Load conditions
+    conditions_file = "all_conditions.json"
+    if os.path.exists(conditions_file):
+        print("  Loading all_conditions.json...")
+        try:
+            with open(conditions_file, "r", encoding="utf-8") as f:
+                conditions_data = json.load(f)
+
+            cond_count = 0
+            for scheme_id_str, scheme_conds in conditions_data.get(
+                "schemes", {}
+            ).items():
+                scheme_id = int(scheme_id_str)
+                scheme = Scheme.query.get(scheme_id)
+                if not scheme:
+                    continue
+
+                for cond in scheme_conds.get("conditions", []):
+                    try:
+                        condition = Condition(
+                            scheme_id=scheme_id,
+                            field=cond.get("field"),
+                            label=cond.get("label"),
+                            type=cond.get("type"),
+                            operator=cond.get("operator"),
+                            value=cond.get("value"),
+                            value_min=cond.get("value_min"),
+                            value_max=cond.get("value_max"),
+                            unit=cond.get("unit"),
+                            required=cond.get("required", True),
+                            source_text=cond.get("source_text"),
+                            confidence=cond.get("confidence", 0.8),
+                        )
+                        db.session.add(condition)
+                        cond_count += 1
+                    except Exception as cond_err:
+                        print(f"    Warning: Could not add condition: {cond_err}")
+                        continue
+
+            db.session.commit()
+            print(f"  ✓ Added {cond_count} conditions")
+        except Exception as e:
+            db.session.rollback()
+            print(f"  ✗ Error loading conditions: {e}")
+
+    # Load questions (if model exists)
+    questions_file = "all_questions_by_scheme.json"
+    if os.path.exists(questions_file):
+        print("  Loading all_questions_by_scheme.json...")
+        try:
+            with open(questions_file, "r", encoding="utf-8") as f:
+                questions_data = json.load(f)
+
+            print(f"  ✓ Questions file loaded (integration depends on Question model)")
+        except Exception as e:
+            print(f"  ✗ Error loading questions: {e}")
 
 
 def seed_schemes():
